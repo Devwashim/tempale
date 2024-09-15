@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{%block title%}About {% endblock %}
+{% block  content %}
+{% load static %}
+{% load active_link_tags %}
+
+
+  <div id="carouselExampleSlidesOnly"  class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner" style="height: 100vh">
+      <div class="carousel-item active">
+        <img src="{% static "temple3.jpg" %}" class="d-block w-100" alt="...">
+      </div>
+  </div>
+
+      <!-- Benefit Section Header -->
+      <section class="benefit-section text-center py-5">
+        <h5 class="text-uppercase text-warning">Benefit</h5>
+        <h1 class="font-weight-bold">The Benefits of Joining Our Temple</h1>
+      </section>
+
+      <!-- About-us Section -->
+      <section class="about-section py-5">
+        <div class="container">
+          <div class="row align-items-center mb-5">
+            <!-- Text Column -->
+            <div class="col-md-6">
+              <h3 class="font-weight-bold">Donate Events</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit.
+              </p>
+            </div>
+            <!-- Image Column -->
+            <div class="col-md-6">
+              <img
+                src='{% static 'temple1.jpg' %}'
+                alt="Donate Events"
+                class="img-fluid rounded"
+                width="75%"
+              />
+            </div>
+          </div>
+
+          <div class="row align-items-center mb-5">
+            <!-- Image Column -->
+            <div class="col-md-6">
+              <img
+                src="{% static 'about1.jpg' %}"
+                alt="All Are Welcome"
+                class="img-fluid rounded"
+              />
+            </div>
+            <!-- Text Column -->
+            <div class="col-md-6">
+              <h3 class="font-weight-bold">All Are Welcome</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit.
+              </p>
+            </div>
+          </div>
+
+          <div class="row align-items-center mb-5">
+            <!-- Text Column -->
+            <div class="col-md-6">
+              <h3 class="font-weight-bold">Donate Events</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit.
+              </p>
+            </div>
+            <!-- Image Column -->
+            <div class="col-md-6">
+              <img src="{% static 'about2.jpg' %}" alt="Donate Events" class="img-fluid rounded" width="75%">
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+{% endblock%}
