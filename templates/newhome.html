@@ -1,0 +1,330 @@
+{% extends "base2.html" %}
+{% load static %}
+{% block  content %}
+
+{% comment %} main start {% endcomment %}
+
+<main>
+<!--container satrt-->
+  <div class="container">
+    <div class="row" ><!--row start-->
+      <div class="col-12" > <!--col start-->
+
+        <div class="pricing-header col-8 md p-2 pb-md-2 mx-auto text-center bg-dark text-light rounded-3 mt-2">
+          <h4 class="col">Edit your PDFs with ease, precision, and flexibility. Your documents, your way.</h4>
+        </div>
+        </div>
+<br>
+        <div class="row">
+          <div class="container text-center custom-container">
+
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{% static "ttt1.png" %}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block mb-5 p-5">
+                <h2>Why Choose Editevolv?</h2>  
+                 <p> <h4>User-Friendly Interface</h4></p>
+                <p><h4>Affordable Price Plan</h4></p>
+                <p><h4>Advanced Editing Features</h4></p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{% static "ttt1.png" %}"class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block mb-5 p-5">
+                <h2>Why Choose Editevolv?</h2>  
+                <p> <h4>User-Friendly Interface</h4></p>
+               <p><h4>Affordable Price Plan</h4></p>
+               <p><h4>Advanced Editing Features</h4></p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{% static "ttt1.png" %}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block mb-5 p-5">
+                <h2>Why Choose Editevolv?</h2>  
+                <p> <h4>User-Friendly Interface</h4></p>
+               <p><h4>Affordable Price Plan</h4></p>
+               <p><h4>Advanced Editing Features</h4></p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+
+
+              <br>
+            {% comment %} <button start {% endcomment %}
+             <div class="row justify-content-between">
+                <div class="col-4">
+                  <a class="navbar-brand"  href=""> <img src="{% static 'edit11.png' %}" alt="Logo" class="logo"   height="60px"></a>
+                </div>
+
+                <div class="col-4">
+                  <a class="navbar-brand"  href="#"> <img src="{% static 'edit12.png' %}" alt="Logo" class="logo"   height="60px"></a>
+
+                </div>
+              </div>
+            {% comment %} <button end {% endcomment %}
+
+      </div> <!--col end-->
+    <div> <!--row end-->
+  </div><!--container end-->
+
+</main>
+
+<br>
+   <div class="container " id="featured-3"><!--container start-->
+    <div class="row row-cols "><!--row start-->
+          <div class="feature col bg-secondary text-light border rounded-3 gap-3">
+            <h2>Your Ultimate PDF File Converter Solution:</h2>
+            <p>In today’s fast-paced digital world, efficiency, 
+              accuracy, and convenience are key. At Editevolv, 
+              we provide an all-in-one solution to your PDF needs,
+              ensuring that you can seamlessly manage, convert,
+                and edit PDF files with ease. Whether you’re a business professional,
+                student, or someone who frequently deals with documents, 
+                Editevolv is designed to simplify your workflow and enhance productivity. 
+                Ready to take control of your PDF files? Sign up for Editevolv today and discover the easiest way to convert,
+                  edit, and manage your documents.</p>
+              </div>
+
+              <div class="col-md-6 bg-light border rounded-3">
+                {% comment %} <img src="{% static 'doaa.png' %}" class="d-block mx-auto w-50" alt="..."> {% endcomment %}
+
+                {% comment %} <div class="droparea"> <i class="bi bi-cloud-arrow-down-fill">Drop the Image Here</i></div> {% endcomment %}
+              <h3 class="text-center mt-2">Upload Your File</h3>
+              <label for="formFile" class="form-label l1 rounded-3 "> <h1><i class="bi bi-cloud-arrow-down-fill"></i>UPLOAD FILE</h1></label>
+              <input class="form-control" type="file" id="formFile">
+              <h5 class="text-center">Edit first, pay later.</h5>         
+          </div>
+          
+          
+<style>
+
+  input[type="file"]{
+    display:none;
+  }
+
+  label{
+    {% comment %} display:inline-block; {% endcomment %}
+  }
+
+.l1{
+  height: 50vh;
+  width: 100%;
+  border: 1px dashed gray;
+  color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  {% comment %} margin-top: 5em; {% endcomment %}
+
+}
+
+{% comment %} 
+  .droparea {
+    height: 400px;
+    width: 400px;
+    border: 1px dashed gray;
+    color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+  }
+  .hover {
+    color: #fff;
+    border: 1px dashed #fff;
+  }
+  .valid {
+    color: #fff;
+    background-color: green;
+    border: 1px solid green;
+  }
+  .invalid {
+    color: #fff;
+    background-color: red;
+    border: 1px solid red;
+  } {% endcomment %}
+
+
+
+</style>
+
+            <div class="feature col-lg bg-light border rounded-3 ">
+            <div class="row align-items-center">
+              <img  src="{% static 'about2.jpg' %}" class="img-fluid" width="100%"  style="height: 55vh" alt="...">
+              </div>
+            </div>
+  </div> <!--row end-->
+
+</div><!--container end-->
+
+<br>
+<br>
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3">
+      <div class="col-md-4 mb-1">
+        <div class="card  rounded-3 shadow-sm rounded-5">
+          <div class="card-header py-3 text-light bg-primary">
+            <h4 class="my-0 fw-normal text-center">ONE PDF</h4>
+          </div>
+
+          <div class="card-body ">
+            <ul class="list-unstyled text-left">
+              <li class="text-left">One PDF File or Document</li>
+              <li>Text editing</li>
+              <li>Image insertion/removal</li> 
+              <li>Page rearrangement</li>
+              <li>Ideal for occasional users who need quick edits</li>
+              
+            </ul>
+            <h6 class="card-title pricing-card-title">Rs.1 /-<small class="text-body-secondary fw-light"></small></h6>
+
+            <button type="button" class="btn  btn-primary">Buy Now</button>
+          </div>
+        </div><!--col end-->
+      </div><!--row end-->
+    
+      <div class="col-md-4 mb-1">
+        <div class="card rounded-3 shadow-sm">
+          <div class="card-header py-3  text-light bg-primary">
+            <h4 class="my-0 fw-normal text-center">ONE HOUR</h4>
+             </div>
+           <div class="card-body">
+            <ul class="list-unstyled  text-left">
+
+              <li>Five PDF File or Document</li>
+              <li>Text editing</li>
+              <li>Image insertion/removal</li>
+              <li>Page rearrangement</li>
+              <li>Perfect for users who require multiple edits in a short timeframe</li>
+              <h6 class="card-title pricing-card-title">Rs.3 /-<small class="text-body-secondary fw-light"></small></h6>
+
+            </ul>
+            <button type="button" class=" btn btn-primary">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-4">
+        <div class="card rounded-3 shadow-sm">
+          <div class="card-header  text-light bg-primary">
+            <h4 class="my-0 fw-normal text-center ">ONE DAY</h4>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled ">
+              <li>Unlimited Edits for 24 Hours</li>
+              <li>Edit multiple PDFs in a single day without extra charges</li>
+              <li>Image insertion/removal</li>
+              <li>Page rearrangement</li>
+              <li>Large projects, document formatting, and extensive revisions</li>
+            </ul>
+            <h6 class="card-title pricing-card-title">Rs.9 /-<small class="text-body-secondary fw-light"></small></h6>
+
+            <button type="button" class=" btn btn-primary">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-6 bg-light border rounded-3 mb-1">
+          <h1 class="text-center">Need Help!</h1>
+            {% comment %} <div class="h-100 p-5 text-white bg-dark rounded-3"> {% endcomment %}
+          <div class="mb-3 ">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="text" class="form-control bg-light" id="exampleFormControlInput1" placeholder="">
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email id</label>
+            <input type="email" class="form-control bg-light" id="exampleFormControlInput1" placeholder="">
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Issue:</label>
+            <textarea class="form-control bg-light" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <input type="submit" class="btn btn-primary" id="exampleFormControlInput1" placeholder="">
+          </div>
+
+        </div>
+
+      <div class="col-md-6">
+        <div class="cols h-100 p-5 bg-light border rounded-3" >
+          <h3 class="col mt-5 py-5">Daily access to premium PDF features at a price that fits your budget. Edit smarter, not harder. -Founder</h3>
+        </div>
+    </div>
+  </div>
+<br>
+
+
+
+  
+
+<script>
+
+
+  const droparea = document.querySelector(".droparea");
+
+droparea.addEventListener("dragover", (e) => {
+  e.preventDefault();
+  droparea.classList.add("hover");
+});
+
+droparea.addEventListener("dragleave", () => {
+  droparea.classList.remove("hover");
+});
+
+droparea.addEventListener("drop", (e) => {
+  e.preventDefault();
+
+  const image = e.dataTransfer.files[0];
+  const type = image.type;
+
+  if (
+    type == "image/png" ||
+    type == "image/jpg" ||
+    type == "image/jpeg"
+  ) {
+    return upload(image);
+  } else {
+    droparea.setAttribute("class", "droparea invalid");
+    droparea.innerText = "Invalid File Format!";
+    return false;
+  }
+});
+
+const upload = (image) => {
+  droparea.setAttribute("class", "droparea valid");
+  droparea.innerText = "Added " + image.name;
+};
+</script>
+
+{% endblock %}
+
+
+

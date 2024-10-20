@@ -38,10 +38,9 @@
                         <a class="nav-link {% if url_name == 'index' %}active{% endif %}" href="{% url "index" %}">Home</a>
                     </li>
                     <li class="nav-item">
-                      {% comment %} {% load active_link_tags %} {% endcomment %}
+                      {% load active_link_tags %}
 
                         <a class="nav-link {% if url_name == 'about' %}active{% endif %}" href="{% url "about" %}">About Us</a>
-                        {% comment %} <a href="{% url 'about' %}" class=" nav-link active{% active_link 'about' %}">About Us</a> {% endcomment %}
 
                     </li>
                     <li class="nav-item">
@@ -49,10 +48,13 @@
                     </li>
     
                     <li class="nav-item">
-                        <a class="nav-link  {% if url_name == 'contact' %}active{% endif %}" href="{% url "contact" %}">Contact Us</a>
+                        {% comment %} <a class="nav-link  {% if url_name == 'contact' %}active{% endif %}" href="{% url "contact" %}">Contact Us</a> {% endcomment %}
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if url_name == 'login' %}active{% endif %} " href="{% url "login" %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if url_name == 'login' %}active{% endif %} " href="{% url "newhome" %}">newhome</a>
                     </li>
                 </ul>
             </div>
@@ -98,7 +100,53 @@
           <li><a href="#" class="text-white">Latest News</a></li>
           <li><a href="#" class="text-white">Contact</a></li>
         </ul>
-      </div>
+
+      <ul>
+       
+       
+        <li>
+            <ul>
+                <li><div class="nav__title">Convert to PDF</div></li>
+                <li><a href="/jpg_to_pdf"><i class="ico ico--jpgpdf"></i> JPG to PDF</a></li>
+                <li><a href="/word_to_pdf"><i class="ico ico--wordpdf"></i>WORD to PDF</a></li>
+                <li><a href="/powerpoint_to_pdf"><i class="ico ico--powerpointpdf"></i> POWERPOINT to PDF</a></li>
+                <li><a href="/excel_to_pdf"><i class="ico ico--excelpdf"></i> EXCEL to PDF</a></li>
+                <li><a href="/html-to-pdf"><i class="ico ico--htmlpdf"></i> HTML to PDF</a></li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <li><div class="nav__title">Convert from PDF</div></li>
+                <li><a href="/pdf_to_jpg"><i class="ico ico--pdfjpg"></i> PDF to JPG</a></li>
+                <li><a href="/pdf_to_word"><i class="ico ico--pdfword"></i>PDF to WORD</a></li>
+                <li><a href="/pdf_to_powerpoint"><i class="ico ico--pdfpowerpoint"></i> PDF to POWERPOINT</a></li>
+                <li><a href="/pdf_to_excel"><i class="ico ico--pdfexcel"></i> PDF to EXCEL</a></li>
+                <li><a href="/convert-pdf-to-pdfa"><i class="ico ico--pdfa"></i> PDF to PDF/A</a></li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <li><div class="nav__title">Edit PDF</div></li>
+                <li><a href="/rotate_pdf"><i class="ico ico--rotate"></i>Rotate PDF</a></li>
+                <li><a href="/add_pdf_page_number"><i class="ico ico--pagenumber"></i> Add page numbers</a></li>
+                <li><a href="/pdf_add_watermark"><i class="ico ico--watermark"></i> Add watermark</a></li>
+                <li><a href="/edit-pdf"><i class="ico ico--editpdf"></i>Edit PDF</a></li>
+            </ul>
+        </li>
+       
+    </ul>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
 
       <!-- Helpful -->
       <div class="col-lg-3 col-md-6 mb-4">

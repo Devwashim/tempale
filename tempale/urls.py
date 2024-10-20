@@ -27,8 +27,11 @@ urlpatterns = [
     path('', views.index, name="index"),
     path('about/', views.about, name="about"),
     path('gallery/', views.gallery, name="gallery"),
-    path('contact/', views.contact, name="contact"),
+    # path('contact/', views.contact, name="contact"),
     path('login/', views.login, name="login"),
+    path('Logout/', views.Logout, name="Logout"),
     path('register/', views.register, name="register"),
+    path('dashboard/', views.dashboard, name="dashboard"),
+    path('newhome/', views.newhome, name="newhome"),
 
 ] + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

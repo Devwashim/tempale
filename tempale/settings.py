@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-ge)(bibdxkw*sp0sfh+d*_j4ev*io@0%=mpdi&si=@hz70x72o
 DEBUG = True
 
 ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['using a ip']
 
 
 # Application definition
@@ -39,8 +40,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'active_link',
+    'tempale',
+    "crispy_forms",
+    "crispy_bootstrap5",
     
 ]
+
+AUTHENTICATION_BACKENDS =[
+        'django.contrib.auth.backends.ModelBackend',
+
+]
+
+RISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -127,3 +140,4 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
