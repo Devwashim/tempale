@@ -16,122 +16,122 @@
 
   <body style="background-color:rgb(113 44 249);"> 
 
-    {% comment %} start nav style="background-image: url('{% static "5794854.jpg" %}') {% endcomment %}
-<nav class="navbar navbar-expand-lg navbar-secondary bg-#4119936b"   aria-label="Eighth navbar example">
-    <div class="container-fluid" height="">
-      <a class="navbar-brand"  href=""> <img src="{% static 'edit.png' %}" alt="Logo" class="logo"   height="50px"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon text-light"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarsExample07">
-        <ul class="navbar-nav mx-auto">
-        {% comment %} <ul class="navbar-nav me-auto mb-2 mb-lg-0"> {% endcomment %}
-          <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-light" href="#" id="dropdown07" data-bs-toggle="dropdown" aria-expanded="true">All Tools</a>
-            {% comment %} <ul class="dropdown-menu" aria-labelledby="dropdown07"> {% endcomment %}
-            <ul class="dropdown-menu" >
+
+<div class="container">
+
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4119936b;">
+  <div class="container-fluid">
+    <a class="navbar-brand"  href=""> <img src="{% static 'edit.png' %}" alt="Logo" class="logo"   height="50px"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav  mx-auto me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+    
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            All Tools
+          </a>
+          <div class="dropdown-menu" style="background-color:#aa39ea;" aria-labelledby="navbarDropdown">
+            <ul>
               <li><a class="dropdown-item " href="#" aria-current="true">Convert To PDF</a>
-                  <ul class="menu p-0" style="list-style:none;">
-                              <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-jpg"></i>JPG to PDF</a></li>
-                              <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-word-fill"></i>WORD to PDF</a></li>
-                              <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-ppt"></i>POWERPOINT to PDF</a></li>
-                              <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-spreadsheet-fill"></i>EXCEL to PDF</a></li>
-                              <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-html"></i>HTML to PDF</a></li>
-                     </ul>
-                  </li>
-              <li><a class="dropdown-item " href="#" aria-current="true">Convert from PDF</a>
-              <ul class="menu1 p-0" style="list-style:none;" >
-                  <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-jpg"></i>PDF to JPG</a></li>
-                  <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-word-fill"></i>PDF to WORD</a></li>
-                  <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-ppt">PDF to POWERPOINT</i></a></li>
-                  <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-spreadsheet-fill"></i>PDF to EXCEL</a></li>
-                  <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-html"></i>PDF to PDF</a></li>
-                </ul>
-              </li>
-
-              <li><a class="dropdown-item " href="#" aria-current="true">Edit PDF</a>
-                <ul class="menu2 p-0 " style="list-style:none;">
-                  <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-pdf-fill"></i>Rotate PDF</a></li>
-                  <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-fill"></i>Add page numbers</a></li>
-                  <li><a class="dropdown-item " href="#" aria-current="true">Add watermark</a></li>
-                  <li><a class="dropdown-item " href="#" aria-current="true">Edit PDF</a></li>
-                </ul>
-              </li>
+              <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-jpg"></i>JPG to PDF</a></li>
+              <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-word-fill"></i>WORD to PDF</a></li>
+              <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-ppt"></i>POWERPOINT to PDF</a></li>
+              <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-spreadsheet-fill"></i>EXCEL to PDF</a></li>
+              <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-html"></i>HTML to PDF</a></li>
             </ul>
-          </li>
+            <ul>
+              <li><a class="dropdown-item " href="#" aria-current="true">Convert from PDF</a>
+                <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-jpg"></i>PDF to JPG</a></li>
+                <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-word-fill"></i>PDF to WORD</a></li>
+                <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-ppt">PDF to POWERPOINT</i></a></li>
+                <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-spreadsheet-fill"></i>PDF to EXCEL</a></li>
+                <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-html"></i>PDF to PDF</a></li>
+
+            </ul>
+            <ul>
+              <li><a class="dropdown-item " href="#" aria-current="true">Edit PDF</a>
+                <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-pdf-fill"></i>Rotate PDF</a></li>
+                <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-fill"></i>Add page numbers</a></li>
+                <li><a class="dropdown-item " href="#" aria-current="true">Add watermark</a></li>
+                <li><a class="dropdown-item " href="#" aria-current="true">Edit PDF</a></li>
+
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
           <li><a href="#" class="nav-link px-2 text-light ">Login</a></li>
-          <li><a href="#" class="nav-link px-2 text-light ">Pricing</a></li>
-        </ul>
-
-        <div class="d-flex ">
-          <button type="button" class="btn btn-primary me-2">Support</button>
-
-      </div>
-      </div>
-    
+          <li><a href="#" class="nav-link px-2 text-light ">Pricing</a></li>        </li>
+      </ul>
+      <form class="d-flex">
+        <button class="btn btn-primary" type="submit">Support</button>
+      </form>
     </div>
-   
-  </nav>
+  </div>
+</nav>
 
-  {% comment %} nav end  {% endcomment %}
-        <style>
+<style>
 
-.nav-link:hover {
-
-  color:white;
-  background-color:#0d6efd;
-  border-radius: 5px;
-  margin:auto;
-  
-
-}
-  @media screen and (min-width:993px){
-
-    .dropdown:hover .dropdown-menu{
-      display:flex;
-    }
-
-    .dropdown-menu.show{
-      display:flex;
-    
-    }
-
-  } 
-
-  @media screen and (max-width:993px){
-    .dropdown-menu.show{
-      max-height:350px;
-      overfloy-y:scoll;
-    }
-
-  } 
-
-  .dropdown-menu ul{
-    list-style:none;
-    padding:0;
+  .navbar-dark .navbar-nav a.nav-link {
+    color: #ffffff;
+    font-size: 1.1em;
   }
-  .dropdown-menu.show{
-    display:flex;
-
+  .dropdown-menu {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border: none;
+    border-radius: 0;
+    padding: 0.7em;
   }
-
-  .dropdown-menu li a{
-
-    padding: .5em 1em;
+  @media only screen and (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+      display: flex;
+    }
+    .dropdown-menu.show {
+      display: flex;
+    }
   }
-
-
-  .dropdown-menu ul:first-child li{
-
-    font-weight:bold;
-    font-size:1.2em;
-    color:#000;
-  }  
-
-
+  .dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  .dropdown-menu li .dropdown-item {
+    color: white;
+    font-size: 1em;
+    padding: 0.5em 1em;
+  }
+  .dropdown-menu li .dropdown-item:hover {
+    {% comment %} background-color: #f1f1f1; {% endcomment %}
+    background-color: #2797f9;
+  }
+  .dropdown-menu li:first-child a {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    color: #516beb;
+  }
+  .dropdown-menu li:first-child a:hover {
+    background-color: #f1f1f1;
+  }
+  @media only screen and (max-width: 992px) {
+    .dropdown-menu.show {
+      flex-wrap: wrap;
+      max-height: 350px;
+      overflow-y: scroll;
+    }
+  }
+  @media only screen and (min-width: 992px) and (max-width: 1140px) {
+    .dropdown:hover .dropdown-menu {
+      width: 40vw;
+      flex-wrap: wrap;
+    }
+  }
 </style>
                           
 
