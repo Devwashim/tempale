@@ -14,20 +14,20 @@
   </head>
   {% load static %}
 
-  <body style="background-image: url('{% static "5249851.jpg" %}')"> 
+  <body style="background-color:rgb(113 44 249);"> 
 
-    {% comment %} start nav {% endcomment %}
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark"  style="background-image: url('{% static "5794854.jpg" %}')"  aria-label="Eighth navbar example">
+    {% comment %} start nav style="background-image: url('{% static "5794854.jpg" %}') {% endcomment %}
+<nav class="navbar navbar-expand-lg navbar-secondary bg-#4119936b"   aria-label="Eighth navbar example">
     <div class="container-fluid" height="">
-      <a class="navbar-brand"  href=""> <img src="{% static 'edit.png' %}" alt="Logo" class="logo"   height="80px"></a>
+      <a class="navbar-brand"  href=""> <img src="{% static 'edit.png' %}" alt="Logo" class="logo"   height="50px"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon text-light"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarsExample07">
         <ul class="navbar-nav mx-auto">
         {% comment %} <ul class="navbar-nav me-auto mb-2 mb-lg-0"> {% endcomment %}
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-light" href="#" id="dropdown07" data-bs-toggle="dropdown" aria-expanded="true">All Tools</a>
@@ -53,7 +53,7 @@
               </li>
 
               <li><a class="dropdown-item " href="#" aria-current="true">Edit PDF</a>
-                <ul class="menu2 p-0" style="list-style:none;">
+                <ul class="menu2 p-0 " style="list-style:none;">
                   <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-pdf-fill"></i>Rotate PDF</a></li>
                   <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-fill"></i>Add page numbers</a></li>
                   <li><a class="dropdown-item " href="#" aria-current="true">Add watermark</a></li>
@@ -120,16 +120,16 @@
 
   .dropdown-menu li a{
 
-    color:gray;
     padding: .5em 1em;
   }
 
-  {% comment %} .dropdown-menu ul:first-child li{
+
+  .dropdown-menu ul:first-child li{
 
     font-weight:bold;
     font-size:1.2em;
     color:#000;
-  }   {% endcomment %}
+  }  
 
 
 </style>
@@ -163,7 +163,7 @@
               </ul>
             </div>
       
-            <div class="col-6 col-md-2 mb-3 text-light">
+            <div class="col-5 col-md-2 mb-3  text-light">
               <h5>Section</h5>
               <ul class="nav flex-column">
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Home</a></li>
