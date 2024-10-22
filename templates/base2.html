@@ -21,6 +21,17 @@
   
 <div class="container">
 
+
+
+
+
+
+
+
+
+
+
+
 </div>
 <nav class="navbar navbar-expand-lg navbar-light border rounded-3 bg-light ">
   <div class="container-fluid">
@@ -35,13 +46,11 @@
           <a class="nav-link " aria-current="page" href="#">Home</a>
         </li>
     
-        <li class="nav-item dropdown ">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            All Tools
-          </a>
-          
-          <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+          <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">All Tools
+            </a>
+            <div class="dropdown-menu megamenu" role="menu">
+          {% comment %} <div class="dropdown-menu " aria-labelledby="navbarDropdown"> {% endcomment %}
             <ul>
               <li><a class="dropdown-item " href="#" aria-current="true">Convert To PDF</a>
               <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-jpg"></i>JPG to PDF</a></li>
@@ -63,8 +72,8 @@
               <li><a class="dropdown-item " href="#" aria-current="true">Edit PDF</a>
                 <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-pdf-fill"></i>Rotate PDF</a></li>
                 <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-fill"></i>Add page numbers</a></li>
-                <li><a class="dropdown-item " href="#" aria-current="true">Add watermark</a></li>
-                <li><a class="dropdown-item " href="#" aria-current="true">Edit PDF</a></li>
+                <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-word"></i>Add watermark</a></li>
+                <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-pencil-square"></i>Edit PDF</a></li>
 
             </ul>
           </div>
@@ -82,6 +91,28 @@
 
 <style>
 
+
+.navbar .megamenu{ padding: 1rem; }
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+
+.navbar .has-megamenu{position:static!important;}
+.navbar .megamenu{left:25%; right:10%; width:45%; margin-top:0;  }
+
+}	
+/* ============ desktop view .end// ============ */
+
+/* ============ mobile view ============ */
+@media(max-width: 991px){
+.navbar.fixed-top .navbar-collapse, .navbar.sticky-top .navbar-collapse{
+  overflow-y: auto;
+  max-height: 90vh;
+  margin-top:10px;
+  
+  }
+}
+/* ============ mobile view .end// ============ */
 
   .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='coral' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
@@ -199,14 +230,14 @@
             </div>
           </div>
       
-          <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top text-light">
+          <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top text-dark">
             <p>© 2024 Company, Inc. All rights reserved.</p>
             <ul class="list-unstyled d-flex">
-              <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-              <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-              <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+              <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-meta"></i><use xlink:href="#"></use></a></li>
+              <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-instagram"></i><use xlink:href="#instagram"></use></a></li>
+              <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-twitter-x" width="24" height="24"></i><use xlink:href="#facebook"></use></a></li>
+              <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-linkedin"></i><use xlink:href="#facebook"></use></a></li>
             </ul>
-          </div>
         </footer>
       </div>
 

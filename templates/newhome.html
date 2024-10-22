@@ -10,7 +10,7 @@
     <div class="row" ><!--row start-->
       <div class="col-12" > <!--col start-->
 
-        <div class="pricing-header col-9 md p-2 pb-md-2 mx-auto text-center bg-primary text-light rounded-3 mt-4 mb-2">
+        <div class="pricing-header col-9 md p-2 pb-md-2 mx-auto text-center text-dark rounded-3 mt-4 mb-2"style="background-color:rgb(217 220 227);">
           <h4 class="col">Edit your PDFs with ease, precision, and flexibility. Your documents, your way.</h4>
         </div>
         </div>
@@ -20,14 +20,14 @@
 
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
-            {% comment %} <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button> {% endcomment %}
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button> 
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="{% static "re.png" %}" class="d-block w-100 rounded-3" alt="...">
-              <div class="carousel-caption text-light d-none d-md-block mb-5 p-5">
+              <img src="{% static "eea.jpeg" %}" class="d-block w-100 rounded-3" alt="...">
+              <div class="carousel-caption text-dark d-none d-md-block">
                 <h2>Why Choose Editevolv?</h2>  
                  <p> <h4>User-Friendly Interface</h4></p>
                 <p><h4>Affordable Price Plan</h4></p>
@@ -36,24 +36,25 @@
             </div>
            
             <div class="carousel-item">
-              <img src="{% static "2222.png" %}"class="d-block w-100 rounded-3" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-5 p-5">
+              <img src="{% static "ee.jpeg" %}"class="d-block w-100 rounded-3" alt="...">
+              {% comment %} <div class="carousel-caption d-none d-md-block mb-5 p-5"> {% endcomment %}
+              <div class="carousel-caption d-none  text-dark d-md-block">
                 <h2>Why Choose Editevolv?</h2>  
                 <p> <h4>User-Friendly Interface</h4></p>
                <p><h4>Affordable Price Plan</h4></p>
                <p><h4>Advanced Editing Features</h4></p>
               </div>
             </div>
-            {% comment %}  
+            
             <div class="carousel-item">
-              <img src="{% static "55.jpg" %}" class="d-block w-100 rounded-3" alt="...">
-              <div class="carousel-caption d-none d-md-block mb-5 p-5">
+              <img src="{% static "eee.jpeg" %}" class="d-block w-100 rounded-3" alt="...">
+              <div class="carousel-caption d-none text-dark d-md-block">
                 <h2>Why Choose Editevolv?</h2>  
                 <p> <h4>User-Friendly Interface</h4></p>
                <p><h4>Affordable Price Plan</h4></p>
                <p><h4>Advanced Editing Features</h4></p>
               </div>
-            </div> {% endcomment %}
+            </div> 
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -90,7 +91,7 @@
 <br>
    <div class="container " id="featured-3"><!--container start-->
     <div class="row row-cols gap-3 mx-auto"><!--row start-->
-          <div class="feature col bg-secondary text-light border rounded-3 gap-3">
+          <div class="feature col bg-light text-dark border rounded-3 gap-3">
             <h2>Your Ultimate PDF File Converter Solution:</h2>
             <p>In today’s fast-paced digital world, efficiency, 
               accuracy, and convenience are key. At Editevolv, 
@@ -103,7 +104,7 @@
                   edit, and manage your documents.</p>
               </div>
 
-              <div class="col-md-6 bg-primary border rounded-3 text-white" >
+              <div class="col-md-6  rounded-3 text-dark"style="background-color:rgb(250, 250, 250);" >
 
               <h3 class="text-center  mt-2"></i>Upload Your File</h3>
               
@@ -127,7 +128,7 @@
   height: 50vh;
   width: 100%;
   border: 1px dashed black;
-  color: white;
+  color: gray;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,10 +148,10 @@
 
 <br>
 <div class="container">
-  <div class="row row-cols row-cols-md-4 mx-auto gap-4">
+  <div class="row row-cols-md-4 gap-4 mx-auto">
 
-<div class="card p-0 mx-0" style="width: 25rem;">
-  <div class="card-body  bg-primary rounded-3">
+<div class="card p-0 mx-0" style="width: 26rem;">
+  <div class="card-body rounded-3" style="background-color:#A9A9A9;">
     <h5 class="card-title text-center text-light">ONE PDF</h5>
   </div>
   <ul class="list-group list-group-flush">
@@ -165,8 +166,8 @@
    <button href="#" class="card-link btn btn-primary">Buy Now</button>
   </div>
 </div>
-<div class="card p-0 mx-0" style="width: 25rem;">
-  <div class="card-body  bg-primary rounded-3">
+<div class="card p-0 mx-0" style="width: 26rem;">
+  <div class="card-body rounded-3" style="background-color:#A9A9A9;">
     <h5 class="card-title text-center text-light">ONE HOUR</h5>
   </div>
   <ul class="list-group list-group-flush">
@@ -181,8 +182,8 @@
    <button href="#" class="card-link btn btn-primary">Buy Now</button>
   </div>
 </div>
-<div class="card p-0 mx-0" style="width: 25rem;">
-  <div class="card-body  bg-primary rounded-3">
+<div class="card p-0 mx-0" style="width: 26rem;">
+  <div class="card-body rounded-3" style="background-color:#A9A9A9;">
     <h5 class="card-title text-center text-light">ONE DAY</h5>
   </div>
   <ul class="list-group list-group-flush">
@@ -204,9 +205,9 @@
 
 
   <div class="container ">    
-  <div class="row gap-1 mx-auto">
+  <div class="row  mx-auto">
 
-       <div class="col-md-5  border rounded-3 bg-primary text-light">
+       <div class="col-md-6  border rounded-3 text-dark" style="background-color:rgb(250, 250, 250);">
           <h1 class="text-center">Need Help!</h1>
             {% comment %} <div class="h-100 p-5 text-white bg-dark rounded-3"> {% endcomment %}
           <div class="mb-3  ">
@@ -225,12 +226,12 @@
           </div>
 
           <div class="mb-3">
-            <input type="submit" class="btn btn-info text-light" id="exampleFormControlInput1" placeholder="">
+            <input type="submit" class="btn btn-primary text-light" id="exampleFormControlInput1" placeholder="">
           </div>
 
         </div>
 
-       <div class="col-md-6 border rounded-3 bg-primary text-light">
+       <div class="col-md-6 border rounded-3  text-dark" style="background-color:rgb(250, 250, 250);">
         {% comment %} <div class="cols h-100 p-5 bg-light border rounded-3" > {% endcomment %}
           <h3 class="col mt-5 py-5">Daily access to premium PDF features at a price that fits your budget. Edit smarter, not harder. -Founder</h3>
         {% comment %} </div> {% endcomment %}
