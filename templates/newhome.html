@@ -10,7 +10,7 @@
     <div class="row" ><!--row start-->
       <div class="col-12" > <!--col start-->
 
-        <div class="pricing-header col-8 md p-2 pb-md-2 mx-auto text-center bg-primary text-light rounded-3 mt-2 mb-2">
+        <div class="pricing-header col-9 md p-2 pb-md-2 mx-auto text-center bg-primary text-light rounded-3 mt-4 mb-2">
           <h4 class="col">Edit your PDFs with ease, precision, and flexibility. Your documents, your way.</h4>
         </div>
         </div>
@@ -20,20 +20,21 @@
 
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            {% comment %} <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button> {% endcomment %}
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="{% static "2222.png" %}" class="d-block w-100 rounded-3" alt="...">
-              <div class="carousel-caption text-light d-none d-md-block  p-5">
+              <img src="{% static "re.png" %}" class="d-block w-100 rounded-3" alt="...">
+              <div class="carousel-caption text-light d-none d-md-block mb-5 p-5">
                 <h2>Why Choose Editevolv?</h2>  
                  <p> <h4>User-Friendly Interface</h4></p>
                 <p><h4>Affordable Price Plan</h4></p>
                 <p><h4>Advanced Editing Features</h4></p>
               </div>
             </div>
+           
             <div class="carousel-item">
               <img src="{% static "2222.png" %}"class="d-block w-100 rounded-3" alt="...">
               <div class="carousel-caption d-none d-md-block mb-5 p-5">
@@ -43,6 +44,7 @@
                <p><h4>Advanced Editing Features</h4></p>
               </div>
             </div>
+            {% comment %}  
             <div class="carousel-item">
               <img src="{% static "55.jpg" %}" class="d-block w-100 rounded-3" alt="...">
               <div class="carousel-caption d-none d-md-block mb-5 p-5">
@@ -51,7 +53,7 @@
                <p><h4>Affordable Price Plan</h4></p>
                <p><h4>Advanced Editing Features</h4></p>
               </div>
-            </div>
+            </div> {% endcomment %}
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -69,11 +71,11 @@
             {% comment %} <button start {% endcomment %}
              <div class="row justify-content-between">
                 <div class="col-4">
-                  <a class="navbar-brand"  href=""> <img src="{% static 'edit11.png' %}" alt="Logo" class="logo"   height="60px"></a>
+                  <a class="navbar-brand"  href=""> <img src="{% static 'edit11.png' %}" alt="Logo" class="logo"   height="70px"></a>
                 </div>
 
                 <div class="col-4">
-                  <a class="navbar-brand"  href="#"> <img src="{% static 'edit12.png' %}" alt="Logo" class="logo"   height="60px"></a>
+                  <a class="navbar-brand"  href="#"> <img src="{% static 'edit12.png' %}" alt="Logo" class="logo"   height="70px"></a>
 
                 </div>
               </div>
@@ -87,7 +89,7 @@
 
 <br>
    <div class="container " id="featured-3"><!--container start-->
-    <div class="row row-cols gap-3"><!--row start-->
+    <div class="row row-cols gap-3 mx-auto"><!--row start-->
           <div class="feature col bg-secondary text-light border rounded-3 gap-3">
             <h2>Your Ultimate PDF File Converter Solution:</h2>
             <p>In today’s fast-paced digital world, efficiency, 
@@ -101,12 +103,13 @@
                   edit, and manage your documents.</p>
               </div>
 
-              <div class="col-md-6 bg-light border rounded-3">
+              <div class="col-md-6 bg-primary border rounded-3 text-white" >
 
-              <h3 class="text-center mt-2">Upload Your File</h3>
+              <h3 class="text-center  mt-2"></i>Upload Your File</h3>
+              
               <label for="formFile" class="form-label l1 rounded-3 "> <h1><i class="bi bi-cloud-arrow-down-fill"></i>UPLOAD FILE</h1></label>
               <input class="form-control" type="file" id="formFile">
-              <h5 class="text-center">Edit first, pay later.</h5>         
+              <h5 class="text-center  ">Edit first, pay later.</h5>         
           </div>
           
           
@@ -123,8 +126,8 @@
 .l1{
   height: 50vh;
   width: 100%;
-  border: 1px dashed gray;
-  color: gray;
+  border: 1px dashed black;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,74 +147,66 @@
 
 <br>
 <div class="container">
-  <div class="row row-cols row-cols-md-3 mx-4 gap-4">
+  <div class="row row-cols row-cols-md-4 mx-auto gap-4">
 
-<div class="card bg-primary" style="width: 25rem;">
+<div class="card p-0 mx-0" style="width: 25rem;">
+  <div class="card-body  bg-primary rounded-3">
+    <h5 class="card-title text-center text-light">ONE PDF</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">★ One PDF File or Document</li>
+    <li class="list-group-item">★ Text editing</li>
+    <li class="list-group-item">★ Image insertion/removal</li>
+    <li class="list-group-item">★ Page rearrangement</li>
+    <li class="list-group-item">★ Ideal for occasional users who need quick edits</li>
+  </ul>
+  <div class="card-body ">
+    <button class="btn btn-primary">Rs. 1/-</button>
+   <button href="#" class="card-link btn btn-primary">Buy Now</button>
+  </div>
+</div>
+<div class="card p-0 mx-0" style="width: 25rem;">
+  <div class="card-body  bg-primary rounded-3">
+    <h5 class="card-title text-center text-light">ONE HOUR</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">★ Five PDF File or Document</li>
+    <li class="list-group-item">★ Text editing</li>
+    <li class="list-group-item">★ Image insertion/removal</li>
+    <li class="list-group-item">★ Page rearrangement</li>
+    <li class="list-group-item">★ Perfect for users who require multiple edits in a short timeframe</li>
+  </ul>
+  <div class="card-body ">
+    <button class="btn btn-primary">Rs. 3/-</button>
+   <button href="#" class="card-link btn btn-primary">Buy Now</button>
+  </div>
+</div>
+<div class="card p-0 mx-0" style="width: 25rem;">
   <div class="card-body  bg-primary rounded-3">
     <h5 class="card-title text-center text-light">ONE DAY</h5>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"> * Unlimited Edits for 24 Hours</li>
-    <li class="list-group-item"> * Edit multiple PDFs in a single day without extra charges</li>
-    <li class="list-group-item">* Image insertion/removal</li>
-    <li class="list-group-item">* Page rearrangement</li>
-    <li class="list-group-item">* Ideal for occasional users who need quick edits</li>
+    <li class="list-group-item">★ Unlimited Edits for 24 Hours</li>
+    <li class="list-group-item">★ Edit multiple PDFs in a single day without extra charges</li>
+    <li class="list-group-item">★ Image insertion/removal</li>
+    <li class="list-group-item">★ Page rearrangement</li>
+    <li class="list-group-item">★ Ideal for occasional users who need quick edits</li>
   </ul>
   <div class="card-body ">
-
-    <a href="#" class="card-link text-light" >Rs.9</a>
-   <button href="#" class="card-link btn btn-secondary">Buy Now</button>
+    <button class="btn btn-primary">Rs. 9/-</button>
+   <button href="#" class="card-link btn btn-primary">Buy Now</button>
   </div>
-</div>
-
-<div class="card  bg-primary" style="width: 25rem;">
-  <div class="card-body bg-primary">
-    <h5 class="card-title text-center text-light">ONE DAY</h5>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"> * Unlimited Edits for 24 Hours</li>
-    <li class="list-group-item"> * Edit multiple PDFs in a single day without extra charges</li>
-    <li class="list-group-item">* Image insertion/removal</li>
-    <li class="list-group-item">* Page rearrangement</li>
-    <li class="list-group-item">* Ideal for occasional users who need quick edits</li>
-  </ul>
-  <div class="card-body ">
-
-    <a href="#" class="card-link text-light" >Rs.9</a>
-   <button href="#" class="card-link btn btn-secondary">Buy Now</button>
-  </div>
-</div>
-
-<div class="card bg-primary" style="width: 25rem;">
-  <div class="card-body bg-primary">
-    <h5 class="card-title text-center text-light">ONE DAY</h5>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"> * Unlimited Edits for 24 Hours</li>
-    <li class="list-group-item"> * Edit multiple PDFs in a single day without extra charges</li>
-    <li class="list-group-item">* Image insertion/removal</li>
-    <li class="list-group-item">* Page rearrangement</li>
-    <li class="list-group-item">* Ideal for occasional users who need quick edits</li>
-  </ul>
-  <div class="card-body ">
-
-    <a href="#" class="card-link text-light" >Rs.9</a>
-   <button href="#" class="card-link btn btn-secondary">Buy Now</button>
-  </div>
-</div>
-
-</div>
 </div>
 
 </div>
 </div>
 <br>
-  
+
 
   <div class="container ">    
-  <div class="row gap-2 ">
+  <div class="row gap-1 mx-auto">
 
-       <div class="col-md-5  border rounded-3 text-light" style="background-color:#C780FF;">
+       <div class="col-md-5  border rounded-3 bg-primary text-light">
           <h1 class="text-center">Need Help!</h1>
             {% comment %} <div class="h-100 p-5 text-white bg-dark rounded-3"> {% endcomment %}
           <div class="mb-3  ">
@@ -230,12 +225,12 @@
           </div>
 
           <div class="mb-3">
-            <input type="submit" class="btn btn-primary" id="exampleFormControlInput1" placeholder="">
+            <input type="submit" class="btn btn-info text-light" id="exampleFormControlInput1" placeholder="">
           </div>
 
         </div>
 
-       <div class="col-md-6  border rounded-3  text-light" style="background-color:#C780FF;">
+       <div class="col-md-6 border rounded-3 bg-primary text-light">
         {% comment %} <div class="cols h-100 p-5 bg-light border rounded-3" > {% endcomment %}
           <h3 class="col mt-5 py-5">Daily access to premium PDF features at a price that fits your budget. Edit smarter, not harder. -Founder</h3>
         {% comment %} </div> {% endcomment %}
@@ -243,49 +238,6 @@
     </div>
   </div>
 <br>
-
-
-
-  
-
-<script>
-
-
-  const droparea = document.querySelector(".droparea");
-
-droparea.addEventListener("dragover", (e) => {
-  e.preventDefault();
-  droparea.classList.add("hover");
-});
-
-droparea.addEventListener("dragleave", () => {
-  droparea.classList.remove("hover");
-});
-
-droparea.addEventListener("drop", (e) => {
-  e.preventDefault();
-
-  const image = e.dataTransfer.files[0];
-  const type = image.type;
-
-  if (
-    type == "image/png" ||
-    type == "image/jpg" ||
-    type == "image/jpeg"
-  ) {
-    return upload(image);
-  } else {
-    droparea.setAttribute("class", "droparea invalid");
-    droparea.innerText = "Invalid File Format!";
-    return false;
-  }
-});
-
-const upload = (image) => {
-  droparea.setAttribute("class", "droparea valid");
-  droparea.innerText = "Added " + image.name;
-};
-</script>
 
 {% endblock %}
 

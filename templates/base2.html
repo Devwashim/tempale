@@ -14,31 +14,34 @@
   </head>
   {% load static %}
 
-  <body style="background-color:rgb(113 44 249);"> 
+<body style="background-color:#E5E4E2">
+   {% comment %} <body class="bg-secondary"> {% endcomment %}
 
 
+  
 <div class="container">
 
 </div>
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4119936b;">
+<nav class="navbar navbar-expand-lg navbar-light border rounded-3 bg-light ">
   <div class="container-fluid">
-    <a class="navbar-brand"  href=""> <img src="{% static 'edit.png' %}" alt="Logo" class="logo"   height="50px"></a>
+    <a class="navbar-brand"  href=""> <img src="{% static 'edit.png' %}" alt="Logo" class="logo"   height="60px"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse " id="navbarSupportedContent">
-      <ul class="navbar-nav  mx-auto me-auto mb-2 mb-lg-0">
+    <div class="collapse navbar-collapse  " id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto me-auto gap-1 mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link " aria-current="page" href="#">Home</a>
         </li>
     
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown ">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             All Tools
           </a>
-          <div class="dropdown-menu" style="background-color:#aa39ea;" aria-labelledby="navbarDropdown">
+          
+          <div class="dropdown-menu " aria-labelledby="navbarDropdown">
             <ul>
               <li><a class="dropdown-item " href="#" aria-current="true">Convert To PDF</a>
               <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-jpg"></i>JPG to PDF</a></li>
@@ -67,8 +70,8 @@
           </div>
         </li>
         <li class="nav-item">
-          <li><a href="#" class="nav-link px-2 text-light ">Login</a></li>
-          <li><a href="#" class="nav-link px-2 text-light ">Pricing</a></li>        </li>
+          <li><a href="#" class="nav-link px-2">Login</a></li>
+          <li><a href="#" class="nav-link px-2">Pricing</a></li>        </li>
       </ul>
       <form class="d-flex">
         <button class="btn btn-primary" type="submit">Support</button>
@@ -79,8 +82,15 @@
 
 <style>
 
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='coral' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+  .navbar-toggler {
+    border: 2px solid coral;
+  }
   .navbar-dark .navbar-nav a.nav-link {
-    color: #ffffff;
+    color: black;
     font-size: 1.1em;
   }
   .dropdown-menu {
@@ -95,6 +105,7 @@
     }
     .dropdown-menu.show {
       display: flex;
+      
     }
   }
   .dropdown-menu ul {
@@ -102,22 +113,23 @@
     padding: 0;
   }
   .dropdown-menu li .dropdown-item {
-    color: white;
+    color: black;
     font-size: 1em;
     padding: 0.5em 1em;
   }
   .dropdown-menu li .dropdown-item:hover {
     {% comment %} background-color: #f1f1f1; {% endcomment %}
     background-color: #2797f9;
+    color:white;
   }
   .dropdown-menu li:first-child a {
     font-weight: bold;
     font-size: 1.2em;
     text-transform: uppercase;
-    color: #516beb;
+    color: black;
   }
   .dropdown-menu li:first-child a:hover {
-    background-color: #f1f1f1;
+    background-color:#2797f9 ;
   }
   @media only screen and (max-width: 992px) {
     .dropdown-menu.show {
@@ -138,43 +150,43 @@
       {% block content %}{% endblock content %}
 
       {% comment %} footer start {% endcomment %}
-      <div class="container-fluid">
+      <div class="container-fluid bg-light">
         <footer class="py-5">
           <div class="row mx-auto">
-            <div class="col-6 col-md-2 mb-3 text-light">
+            <div class="col-6 col-md-2 mb-3 ">
               <h5>Section</h5>
               <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Features</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Pricing</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">About</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark ">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark ">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">About</a></li>
               </ul>
             </div>
       
-            <div class="col-6 col-md-2 mb-3 text-light">
+            <div class="col-5 col-md-2 mb-3 text-dark">
               <h5>Section</h5>
               <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Features</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Pricing</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">About</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">About</a></li>
               </ul>
             </div>
       
-            <div class="col-5 col-md-2 mb-3  text-light">
+            <div class="col-5 col-md-2 mb-3 text-dark">
               <h5>Section</h5>
               <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Features</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Pricing</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">About</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-dark">About</a></li>
               </ul>
             </div>
       
-            <div class="col-md-5 offset-md-1 mb-3 text-light">
+            <div class="col-md-5 offset-md-1 mb-3 text-dark">
               <form>
                 <h5>Subscribe to our newsletter</h5>
                 <p>Monthly digest of what's new and exciting from us.</p>
