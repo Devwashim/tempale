@@ -16,26 +16,9 @@
 
 <body style="background-color:#E5E4E2">
    {% comment %} <body class="bg-secondary"> {% endcomment %}
-
-
-  
-<div class="container">
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
 <nav class="navbar navbar-expand-lg navbar-light border rounded-3 bg-light ">
   <div class="container-fluid">
-    <a class="navbar-brand"  href=""> <img src="{% static 'edit.png' %}" alt="Logo" class="logo"   height="60px"></a>
+    <a class="navbar-brand"  href=""> <img src="{% static 'edit.png' %}" alt="Logo" class="logo rounded-3"   height="60px"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -45,7 +28,7 @@
         <li class="nav-item">
           <a class="nav-link " aria-current="page" href="#">Home</a>
         </li>
-    
+
           <li class="nav-item dropdown has-megamenu">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">All Tools
             </a>
@@ -124,6 +107,8 @@
     color: black;
     font-size: 1.1em;
   }
+
+  
   .dropdown-menu {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     border: none;
@@ -150,8 +135,9 @@
   }
   .dropdown-menu li .dropdown-item:hover {
     {% comment %} background-color: #f1f1f1; {% endcomment %}
-    background-color: #2797f9;
+    background-color: #416292;
     color:white;
+    border-radius: 5px;
   }
   .dropdown-menu li:first-child a {
     font-weight: bold;
@@ -160,7 +146,7 @@
     color: black;
   }
   .dropdown-menu li:first-child a:hover {
-    background-color:#2797f9 ;
+    background-color:#416292 ;
   }
   @media only screen and (max-width: 992px) {
     .dropdown-menu.show {
