@@ -27,8 +27,10 @@ def dashboard(request):
 def newhome(request):
     return render(request, 'newhome.html')
 
-def oldhome(request):
-    return render(request, 'oldhome.html')
+def client(request):
+    return render(request, 'client.html')
+
+
 
 def Logout(request):
     logout(request)

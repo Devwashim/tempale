@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="path/to/your/styles.css">
+
+    <title>new project</title>
+  </head>
+  {% load static %}
+
+<body style="background-color:#ffecad">
+   {% comment %} <body class="bg-secondary"> {% endcomment %}
+<nav class="navbar navbar-expand-lg navbar-dark border rounded-3" style="background-image: linear-gradient(90deg, rgb(255, 209, 51), rgb(16, 185, 129));">
+  <div class="container-fluid">
+    <a class="navbar-brand"  href=""> <img src="{% static 'edit.png' %}" alt="Logo" class="logo rounded-3"   height="60px"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse  " id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto me-auto gap-3 mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="#">Home</a>
+        </li>
+        <li><a href="#" class="nav-link px-2">Pricing</a></li>   
+
+
+          <li class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">All Tools
+            </a>
+            <div class="dropdown-menu megamenu" role="menu" >
+          {% comment %} <div class="dropdown-menu " aria-labelledby="navbarDropdown"> {% endcomment %}
+            <ul class="item">
+              <li><a class="dropdown-item" href="#" aria-current="true">Convert To PDF</a>
+              <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-jpg"></i>JPG to PDF</a></li>
+              <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-word-fill"></i>WORD to PDF</a></li>
+              <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-ppt"></i>POWERPOINT to PDF</a></li>
+              <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-spreadsheet-fill"></i>EXCEL to PDF</a></li>
+              <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-html"></i>HTML to PDF</a></li>
+            </ul>
+            <ul class="item mx-3">
+              <li><a class="dropdown-item " href="#" aria-current="true">Convert from PDF</a>
+                <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-jpg"></i>PDF to JPG</a></li>
+                <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-word-fill"></i>PDF to WORD</a></li>
+                <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-ppt">PDF to POWERPOINT</i></a></li>
+                <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-spreadsheet-fill"></i>PDF to EXCEL</a></li>
+                <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-filetype-html"></i>PDF to PDF</a></li>
+
+            </ul>
+            <ul class="item ">
+              <li><a class="dropdown-item " href="#" aria-current="true">Edit PDF</a>
+                <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-pdf-fill"></i>Rotate PDF</a></li>
+                <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-fill"></i>Add page numbers</a></li>
+                <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-file-earmark-word"></i>Add watermark</a></li>
+                <li><a class="dropdown-item " href="#" aria-current="true"><i class="bi bi-pencil-square"></i>Edit PDF</a></li>
+
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+
+          <li><a href="#" class="nav-link px-2" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Login</a></li>
+          <li><a href="#" class="nav-link px-2" data-bs-toggle="modal" data-bs-target="#exampleModal1">Sign Up</a></li>
+             </li>
+      </ul>
+      <form class="d-flex">
+        {% comment %} <button class="btn btn-primary" type="submit">Support</button> {% endcomment %}
+      </form>
+    </div>
+  </div>
+</nav>
+
+<style>
+
+
+.navbar .megamenu{ padding: 1rem; }
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+
+.navbar .has-megamenu{position:static!important;}
+.navbar .megamenu{left:25%; right:10%; width:45%; margin-top:0; 
+{% comment %} .navbar .megamenu{left:0%; right:0%; width:100%; margin-top:0;   {% endcomment %}
+ }
+
+}	
+/* ============ desktop view .end// ============ */
+
+/* ============ mobile view ============ */
+@media(max-width: 991px){
+.navbar.fixed-top .navbar-collapse, .navbar.sticky-top .navbar-collapse{
+  overflow-y: auto;
+  max-height: 90vh;
+  margin-top:10px;
+  
+  }
+}
+/* ============ mobile view .end// ============ */
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='coral' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+  .navbar-toggler {
+    border: 2px solid coral;
+  }
+  .navbar-dark .navbar-nav a.nav-link {
+    color: black;
+    font-size: 1.1em;
+  }
+
+  
+  .dropdown-menu {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border: none;
+    border-radius: 0;
+    padding: 0.7em;
+  }
+  @media only screen and (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+      display: flex;
+    }
+    .dropdown-menu.show {
+      display: flex;
+      
+      
+    }
+  }
+  .dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  .dropdown-menu li .dropdown-item {
+    color: white;
+    background-color: #416292;
+    border-radius: 10px;
+    margin:2px 2px 2px 2px;
+    font-size: 1em;
+    padding: 0.5em 1em;
+  }
+ 
+
+
+  .dropdown-menu li .dropdown-item:hover {
+    background-color: #f1f1f1;
+    {% comment %} background-color: #416292; {% endcomment %}
+    color:black;
+    border-radius: 10px;
+  }
+  .dropdown-menu li:first-child a {
+    margin-bottom:15px;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    color: black;
+    background-color: #f1f1f1;
+
+  }
+  .dropdown-menu li:first-child a:hover {
+    {% comment %} background-color:#416292 ; {% endcomment %}
+    {% comment %} color: white; {% endcomment %}
+
+  }
+  @media only screen and (max-width: 992px) {
+    .dropdown-menu.show {
+      flex-wrap: wrap;
+      max-height: 350px;
+      overflow-y: scroll;
+    }
+  }
+  @media only screen and (min-width: 992px) and (max-width: 1140px) {
+    .dropdown:hover .dropdown-menu {
+      width: 40vw;
+      flex-wrap: wrap;
+    }
+  }
+</style>
+
+
+
+
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header  bg-secondary justify-content-center text-light" style="">
+        <h4 class="modal-title fw-bold" id="exampleModalLabel">Login to PDF Tools</h4>
+        {% comment %} <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> {% endcomment %}
+      </div>
+      <div class="modal-body">
+        <form>
+            <input type="text" name="username" placeholder="Username" required class="border border-gray-300 p-2 w-100 mb-4 rounded">
+            <input type="password" name="password" placeholder="Password" required class="border border-gray-300 p-2 w-100 mb-4 rounded">
+            <button type="submit" class="btn btn-primary btn-lg px-4 py-2 rounded hover:bg-blue-700 transition duration-300 w-100">Login</button>
+        </form>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <a href="" class="btn btn-secondary btn-lg text-light">Forgot Password?</a>
+        <span>|</span>
+        <a href="#" class="btn btn-secondary btn-lg text-light">Sign Up</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade " id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header  bg-secondary justify-content-center text-light" style="">
+        <h4 class="modal-title fw-bold" id="exampleModalLabel1">Sign Up for PDF Tools</h4>
+        {% comment %} <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> {% endcomment %}
+      </div>
+      <div class="modal-body">
+        <form>
+          <input type="text" name="username" placeholder="Username" required class="border border-gray-300 p-2 w-100 mb-4 rounded">
+          <input type="email" name="email" placeholder="Email" required class="border border-gray-300 p-2 w-100 mb-4 rounded">
+          <input type="password" name="password" placeholder="Password" required class="border border-gray-300 p-2 w-100 mb-4 rounded">
+          <input type="password" name="confirm_password" placeholder="Confirm Password" required class="border border-gray-300 p-2 w-100 mb-4 rounded">
+          <button type="submit" class="btn btn-primary text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 w-100">Sign Up</button>        </form>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <p class="text-sm">Already have an account? <a href="#"class="btn  btn-secondary" >Login</a></p>
+
+
+      </div>
+    </div> 
+  </div>
+</div>
+
+
+
+
+                          
+
+      {% block content %}{% endblock content %}
+
+      {% comment %} footer start {% endcomment %}
+      <div class="container-fluid" style="background-color:#593308;">
+        <footer class="py-5 text-light">
+          <div class="row mx-auto">
+            <div class="col-12 col-md-7 mb-3 ">
+          <h2 class="text-3xl font-bold mb-2">PDF Tools</h2> <!-- Reduced margin below heading -->
+            <p class="mb-1">All tools you need to work with PDFs in one place.</p> <!-- Reduced margin below each paragraph -->
+            <p class="mb-1">Email: editevolve@gmail.com</p>
+            <p class="mb-1">Address: Pune Maharashtra</p>
+            <p class="mb-0">Contact: 020 23568600</p>
+            </div>
+      
+
+      
+            <div class="col-md-4 offset-md-1 mb-3">
+              <form>
+                <h5 class="text-black-500 mb-2">Get the best stories straight into your inbox!</h5> <!-- Reduced margin below heading -->
+                <div class="input-group flex w-full max-w-sm">
+                    <input type="email" class="form-control p-2 text-black w-full" placeholder="Email" aria-label="Email"> <!-- Reduced padding -->
+                    <button class="btn text-black px-4 py-2 ml-2" style="background-color:rgb(245 158 11);">SUBSCRIBE</button> <!-- Reduced button padding -->
+                </div>
+              </form>
+            </div>
+          </div>
+      
+          <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+            <p>© 2024 Company, Inc. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+              <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-meta"></i><use xlink:href="#"></use></a></li>
+              <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-instagram"></i><use xlink:href="#instagram"></use></a></li>
+              <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-twitter-x" width="24" height="24"></i><use xlink:href="#facebook"></use></a></li>
+              <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-linkedin"></i><use xlink:href="#facebook"></use></a></li>
+            </ul>
+        </footer>
+      </div>
+
+      {% comment %} footer end {% endcomment %}
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

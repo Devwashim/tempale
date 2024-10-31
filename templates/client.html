@@ -1,0 +1,543 @@
+{% extends "base3.html" %}
+{% load static %}
+{% block  content %}
+
+
+<br>
+<div class="row mx-auto">
+    <div class="col-md-3">
+        <div class="row mx-auto">
+        <h3>Your Ultimate PDF File Converter Solution:</h3>
+        <div class="col-md-10 bg-light text-dark border rounded-3 ">
+            <p>In today's fast-paced digital world, efficiency, accuracy, and convenience are key. At Editevolv, we provide an all-in-one solution to your PDF needs, ensuring that you can seamlessly manage, convert, and edit PDF files with ease. Whether you're a business professional, student, or someone who frequently deals with documents, Editevolv is designed to simplify your workflow and enhance productivity.
+            </p>
+        </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+
+
+<!-- Add the carousel section here, right after the navigation bar -->
+
+
+  <!-- 3D Cards Container -->
+  <div class="carousel-container w-1/2 h-72 relative">
+      <div class="rectangular-card absolute t-120 w-72 h-24 bg-yellow-400 rounded-lg flex justify-content-center items-center shadow-lg overflow-hidden">
+          <div class="typing">Why Edit Evolve?</div>
+      </div>
+      <div class="carousel relative w-100 h-100 mt-32">
+          <div class="card" style="transform: rotateY(0deg) translateZ(100px);">
+              <div class="card-text font-bold">User Friendly Interface</div> <!-- Added font-bold class -->
+          </div>
+          <div class="card" style="transform: rotateY(-120deg) translateZ(100px);">
+              <div class="card-text font-bold">Affordable Pricing</div> <!-- Added font-bold class -->
+          </div>
+          <div class="card" style="transform: rotateY(-240deg) translateZ(100px); display: flex; justify-content: center; align-items: center;">
+              <div class="card-text text-center font-bold">Advanced Editing Features</div> <!-- Added font-bold class -->
+          </div>
+      </div>
+  </div>
+
+
+
+
+        file
+    </div>
+    <div class="col-md-3">
+        <div class="row">
+           <!-- Right Container -->
+        <h2 class="text-center fw-bold">Advertisements</h2>
+        
+        <!-- Ad 1 -->
+        <div class="ad mb-4 p-2 border border-gray-300 rounded shadow">
+            <img src="path/to/ad1.jpg" alt="Ad 1" class="w-full h-auto rounded">
+            <p class="text-center mt-2">Your ad description here.</p>
+        </div>
+
+        <!-- Ad 2 -->
+        <div class="ad mb-4 p-2 border border-gray-300 rounded shadow">
+            <img src="path/to/ad2.jpg" alt="Ad 2" class="w-full h-auto rounded">
+            <p class="text-center mt-2">Your ad description here.</p>
+        </div>
+
+        <!-- Ad 3 -->
+        <div class="ad mb-4 p-2 border border-gray-300 rounded shadow">
+            <img src="path/to/ad3.jpg" alt="Ad 3" class="w-full h-auto rounded">
+            <p class="text-center mt-2">Your ad description here.</p>
+        </div>
+</div>
+    </div>
+</div>
+
+<br>
+<br>
+           <!-- Upload Section -->
+           <div class="row mx-auto mt-5">
+        <div class="col-md-4 offset-md-4 flex justify-center mx-auto">
+        {% comment %} <div class="col-md-5 m-md-auto flex justify-center mx-auto"> {% endcomment %}
+            <div class="bg-white border-2  border-gray rounded-3 p-3 text-center"> <!-- Increased padding and max width -->
+                <h3 class="text-3xl fw-bold mb-6 mt-3">Upload Your PDF Files</h3> <!-- Increased font size -->
+                <p class="mb-6 text-lg">Drag and drop your files here or</p> <!-- Increased font size -->
+                <input type="file" id="file-upload" accept=".pdf" class="hidden d-none" onchange="handleFileUpload(event)">
+                <label for="file-upload" class="cursor-pointer bg-danger text-white py-3 px-5 rounded hover:bg-red-600 text-lg">Choose File</label> <!-- Increased padding and font size -->
+                <p class="mt-4 text-gray ">Edit First, Pay Later</p> <!-- Increased font size -->
+            </div>
+        </div>
+    </div> 
+
+
+
+
+
+<br>
+    
+<div class="container-fluid px-4 mt-5">
+
+{% comment %} section 1 {% endcomment %}
+    <div class="row gx-6 g-4 mx-auto">
+        <h1 class="mb-0 fw-bold ">Every tool you need to work with PDFs in one place</h1>
+        <p class="mb-0">All tools are 100% FREE and easy to use! Merge, split, compress, convert, rotate, unlock, and watermark PDFs with just a few clicks.</p>
+    
+      <div class="col-md-3">
+       <div class="p-4 border bg-light text-center border rounded-3">
+        <img src="{% static "merge pdf.jpg" %}" alt="Compress PDF" class="icon mb-4" style="width: 50px; height: auto;">
+        <h5 class="font-bold text-center">Compress PDF</h5>
+        <p class="text-center">Reduce file size while optimizing for maximal PDF quality.</p>
+
+        <p class="d-inline-flex gap-1">
+            <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle second element</button>
+          </p>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample1">
+                <div class="card card-body">
+                    Dropdown content for Split PDF.
+                </div>
+              </div>
+            </div>
+              </div>
+
+             </div>
+             </div>
+      <div class="col-md-3">
+       <div class="p-4 border bg-light text-center border rounded-3">
+        <img src="{% static "merge pdf.jpg" %}" alt="Compress PDF" class="icon mb-4" style="width: 50px; height: auto;">
+        <h5 class="font-bold text-center">Compress PDF</h5>
+        <p class="text-center">Reduce file size while optimizing for maximal PDF quality.</p>
+
+        <p class="d-inline-flex  gap-1">
+            <button class="btn btn-primary"  data-bs-toggle="collapse" data-bs-target="#Mergepdf" aria-expanded="false" aria-controls="Mergepdf">Toggle second element</button>
+        </p>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="Mergepdf">
+                <div class="card card-body">
+                    Mergepdf content for Split PDF.
+                </div>
+              </div>
+            </div>
+              </div>
+
+             </div>
+             </div>
+      <div class="col-md-3">
+       <div class="p-4 border bg-light text-center border rounded-3">
+        <img src="{% static "merge pdf.jpg" %}" alt="Compress PDF" class="icon mb-4" style="width: 50px; height: auto;">
+        <h5 class="font-bold text-center">Compress PDF</h5>
+        <p class="text-center">Reduce file size while optimizing for maximal PDF quality.</p>
+
+        <p class="d-inline-flex  gap-1">
+            <button class="btn btn-primary"  data-bs-toggle="collapse" data-bs-target="#Mergepdf" aria-expanded="false" aria-controls="Mergepdf">Toggle second element</button>
+        </p>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="Mergepdf">
+                <div class="card card-body">
+                    Mergepdf content for Split PDF.
+                </div>
+              </div>
+            </div>
+              </div>
+
+             </div>
+             </div>
+      <div class="col-md-3">
+       <div class="p-4 border bg-light text-center border rounded-3">
+        <img src="{% static "merge pdf.jpg" %}" alt="Compress PDF" class="icon mb-4" style="width: 50px; height: auto;">
+        <h5 class="font-bold text-center">Compress PDF</h5>
+        <p class="text-center">Reduce file size while optimizing for maximal PDF quality.</p>
+
+        <p class="d-inline-flex  gap-1">
+            <button class="btn btn-primary"  data-bs-toggle="collapse" data-bs-target="#Mergepdf" aria-expanded="false" aria-controls="Mergepdf">Toggle second element</button>
+        </p>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="Mergepdf">
+                <div class="card card-body">
+                    Mergepdf content for Split PDF.
+                </div>
+              </div>
+            </div>
+              </div>
+             </div>
+             </div>
+      
+    </div>
+    {% comment %} section 2 {% endcomment %}
+    <div class="row gx-6 g-4 mx-auto mt-3">
+
+      <div class="col-md-3">
+       <div class="p-4 border bg-light text-center border rounded-3">
+        <img src="{% static "merge pdf.jpg" %}" alt="Compress PDF" class="icon mb-4" style="width: 50px; height: auto;">
+        <h5 class="font-bold text-center">Compress PDF</h5>
+        <p class="text-center">Reduce file size while optimizing for maximal PDF quality.</p>
+
+        <p class="d-inline-flex gap-1">
+            <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle second element</button>
+          </p>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="multiCollapseExample1">
+                <div class="card card-body">
+                    Dropdown content for Split PDF.
+                </div>
+              </div>
+            </div>
+              </div>
+
+             </div>
+             </div>
+      <div class="col-md-3">
+       <div class="p-4 border bg-light text-center border rounded-3">
+        <img src="{% static "merge pdf.jpg" %}" alt="Compress PDF" class="icon mb-4" style="width: 50px; height: auto;">
+        <h5 class="font-bold text-center">Compress PDF</h5>
+        <p class="text-center">Reduce file size while optimizing for maximal PDF quality.</p>
+
+        <p class="d-inline-flex  gap-1">
+            <button class="btn btn-primary"  data-bs-toggle="collapse" data-bs-target="#Mergepdf" aria-expanded="false" aria-controls="Mergepdf">Toggle second element</button>
+        </p>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="Mergepdf">
+                <div class="card card-body">
+                    Mergepdf content for Split PDF.
+                </div>
+              </div>
+            </div>
+              </div>
+
+             </div>
+             </div>
+      <div class="col-md-3">
+       <div class="p-4 border bg-light text-center border rounded-3">
+        <img src="{% static "merge pdf.jpg" %}" alt="Compress PDF" class="icon mb-4" style="width: 50px; height: auto;">
+        <h5 class="font-bold text-center">Compress PDF</h5>
+        <p class="text-center">Reduce file size while optimizing for maximal PDF quality.</p>
+
+        <p class="d-inline-flex  gap-1">
+            <button class="btn btn-primary"  data-bs-toggle="collapse" data-bs-target="#Mergepdf" aria-expanded="false" aria-controls="Mergepdf">Toggle second element</button>
+        </p>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="Mergepdf">
+                <div class="card card-body">
+                    Mergepdf content for Split PDF.
+                </div>
+              </div>
+            </div>
+              </div>
+
+             </div>
+             </div>
+      <div class="col-md-3">
+       <div class="p-4 border bg-light text-center border rounded-3">
+        <img src="{% static "merge pdf.jpg" %}" alt="Compress PDF" class="icon mb-4" style="width: 50px; height: auto;">
+        <h5 class="font-bold text-center">Compress PDF</h5>
+        <p class="text-center">Reduce file size while optimizing for maximal PDF quality.</p>
+
+        <p class="d-inline-flex  gap-1">
+            <button class="btn btn-primary"  data-bs-toggle="collapse" data-bs-target="#Mergepdf" aria-expanded="false" aria-controls="Mergepdf">Toggle second element</button>
+        </p>
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="Mergepdf">
+                <div class="card card-body">
+                    Mergepdf content for Split PDF.
+                </div>
+              </div>
+            </div>
+              </div>
+             </div>
+             </div>
+    </div>
+  </div>
+  <br>
+
+    
+
+ <br>
+
+ <div class="container">
+    <h1 class="text-center font-bold mb-8">Pricing Plans</h1>
+    <p class=" text-center text-lg mb-12">Choose the plan that's right for you!</p>
+ <div class="row row-cols-1 row-cols-md-3 mb-3 text-center justify-content-center mx-auto ">
+
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h2 class="my-0 fw-bold">Basic Plan</h2>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">$10/<small class="text-body-secondary fw-light">/month</small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>✔ Access to basic features</li>
+            <li>✔ Community support</li>
+          </ul>
+          <button type="button" class="w-50 btn btn-lg btn-outline-primary mb-3">Choose Plan</button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h2 class="my-0 fw-bold">Basic Plan</h2>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">$10/<small class="text-body-secondary fw-light">/month</small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>✔ Access to basic features</li>
+            <li>✔ Community support</li>
+          </ul>
+          <button type="button" class="w-50 btn btn-lg btn-outline-primary mb-3">Choose Plan</button>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h2 class="my-0 fw-bold">Basic Plan</h2>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">$10/<small class="text-body-secondary fw-light">/month</small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>✔ Access to basic features</li>
+            <li>✔ Community support</li>
+          </ul>
+          <button type="button" class="w-50 btn btn-lg btn-outline-primary mb-3">Choose Plan</button>
+        </div>
+      </div>
+    </div>
+
+   
+  </div>
+  </div>
+ <br>
+<div class="container mx-auto">
+  
+  <div class="row">
+    
+      <div class="col-md-5 mt-5 man-illustration">
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="arms"></div>
+        <div class="legs"></div>
+        <div class="speech-bubble">
+            <p class="typing-animation">Come, I'll help you!</p> <!-- Added typing animation class -->
+        </div>
+</div>
+
+<div class="col-md-5">
+  <h2 class="text-center font-bold mb-6">Need Help?</h2>
+  <p class="mb-8 text-center">Fill out the form below and our support team will get back to you shortly.</p>
+    {% comment %} <div class="h-100 p-5 text-white bg-dark rounded-3"> {% endcomment %}
+    <form class="row border rounded-3 text-dark py-4 px-2 mt-4" style="background-color:rgb(250, 250, 250);">
+
+    <input type="text" class="border border-gray-300 p-3 mb-3 w-100 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" id="exampleFormControlInput1" placeholder="Name">
+
+    <input type="email"placeholder="Your Email" class="border border-gray-300 p-3  mb-3 w-100 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required id="exampleFormControlInput1" placeholder=" Email id">
+
+    <label for="exampleFormControlTextarea1" class="form-label"></label>
+    <textarea class="border border-gray-300 p-3   mb-3 w-100 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"  id="exampleFormControlTextarea1" rows="4" placeholder="Issue:"></textarea>
+<div class="mb-2 text-center">
+    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    
+</div>
+</div>
+  </div>
+</div>
+</div>
+
+
+<style>
+  .man-illustration {
+      position: relative;
+      width: 150px; /* Width of the man */
+      height: 300px; /* Height of the man */
+      margin: 0 auto;
+      animation: fadeIn 1s ease-in; /* Fade-in effect for the whole illustration */
+  }
+
+  .head {
+      width: 75px; /* Width of the head */
+      height: 75px; /* Height of the head */
+      background-color: #000; /* Black color for the head */
+      border-radius: 50%; /* Circular head */
+      position: absolute;
+      top: 0;
+      left: 37.5px; /* Center the head */
+      animation: bounce 1s infinite; /* Bounce animation for the head */
+  }
+
+  .body {
+      width: 60px; /* Increased width of the body */
+      height: 100px; /* Increased height of the body */
+      background-color: #000; /* Black color for the body */
+      position: absolute;
+      top: 75px; /* Adjusted position */
+      left: 45px; /* Center the body */
+  }
+
+  .arms {
+      width: 150px; /* Width of the arms */
+      height: 30px; /* Height of the arms */
+      background-color: #000; /* Black color for the arms */
+      position: absolute;
+      top: 75px; /* Adjusted position */
+      left: 0; /* Center the arms */
+      border-radius: 15px; /* Rounded arms */
+      animation: sway 1s infinite alternate; /* Sway animation for the arms */
+  }
+
+  .legs {
+      width: 60px; /* Increased width of the legs */
+      height: 100px; /* Height of the legs */
+      background-color: #000; /* Black color for the legs */
+      position: absolute;
+      top: 175px; /* Adjusted position */
+      left: 45px; /* Center the first leg */
+  }
+
+  .legs::after {
+      content: '';
+      width: 40px; /* Width of the second leg */
+      height: 100px; /* Height of the second leg */
+      background-color: #000; /* Black color for the second leg */
+      position: absolute;
+      top: 0;
+      left: 10px; /* Position for the second leg, creating space between legs */
+  }
+
+  .speech-bubble {
+      position: absolute;
+      top: 50px; /* Position above the head */
+      left: -160px; /* Position to the left of the head */
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      width: 150px; /* Width of the speech bubble */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      opacity: 0; /* Start hidden */
+      animation: popUp 2s infinite; /* Pop-up effect */
+      animation-delay: 2s; /* Delay before it appears */
+  }
+
+  .speech-bubble p {
+      margin: 0;
+      font-size: 14px; /* Font size for the speech text */
+      color: #333; /* Text color */
+  }
+
+  /* Keyframe animations */
+  @keyframes fadeIn {
+      from {
+          opacity: 0;
+      }
+      to {
+          opacity: 1;
+      }
+  }
+
+  @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0);
+      }
+      40% {
+          transform: translateY(-10px);
+      }
+      60% {
+          transform: translateY(-5px);
+      }
+  }
+
+  @keyframes sway {
+      0% {
+          transform: rotate(0deg);
+      }
+      100% {
+          transform: rotate(10deg);
+      }
+  }
+
+  @keyframes popUp {
+      0% {
+          opacity: 0;
+          transform: translateY(10px); /* Start slightly lower */
+      }
+      100% {
+          opacity: 1;
+          transform: translateY(0); /* End at original position */
+      }
+  }
+
+  /* Add this typing animation */
+  .typing-animation {
+      display: inline-block;
+      overflow: hidden; /* Ensures the text doesn't wrap */
+      white-space: nowrap; /* Prevents text from wrapping */
+      border-right: 2px solid; /* Cursor effect */
+      animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite; /* Typing and blinking cursor */
+  }
+
+  @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+  }
+
+  @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: black; }
+  }
+
+  /* Additional styles for the form */
+  form {
+      background-color: #f9f9f9; /* Light background for the form */
+      border-radius: 10px; /* Rounded corners */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+
+  input, textarea {
+      transition: border-color 0.3s ease; /* Smooth transition for focus */
+  }
+
+  input:focus, textarea:focus {
+      border-color: #3b82f6; /* Change border color on focus */
+  }
+</style>
+
+ 
+
+
+
+ <br>
+
+
+ <!-- Vertically centered modal -->
+<div class="modal-dialog modal-dialog-centered">
+  
+</div>
+
+
+
+
+{% endblock %}
