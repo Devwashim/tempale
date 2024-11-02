@@ -34,5 +34,6 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name="dashboard"),
     path('newhome/', views.newhome, name="newhome"),
     path('client/', views.client, name="client"),
+    path('tail/', views.tail, name="tail"),
 
 ] + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

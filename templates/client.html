@@ -3,46 +3,51 @@
 {% block  content %}
 
 
+
 <br>
 <div class="row mx-auto">
     <div class="col-md-3">
         <div class="row mx-auto">
         <h3>Your Ultimate PDF File Converter Solution:</h3>
-        <div class="col-md-10 bg-light text-dark border rounded-3 ">
-            <p>In today's fast-paced digital world, efficiency, accuracy, and convenience are key. At Editevolv, we provide an all-in-one solution to your PDF needs, ensuring that you can seamlessly manage, convert, and edit PDF files with ease. Whether you're a business professional, student, or someone who frequently deals with documents, Editevolv is designed to simplify your workflow and enhance productivity.
-            </p>
+        <div class="col-md-10 bg-white text-dark border rounded-3 fs-5  user-select-none">
+            <p >In today's fast-paced digital world, efficiency, accuracy, and convenience are key. At Editevolv, we provide an all-in-one solution to your PDF needs, ensuring that you can seamlessly manage, convert, and edit PDF files with ease. Whether you're a business professional, student, or someone who frequently deals with documents, Editevolv is designed to simplify your workflow and enhance productivity.
+            
+            </p></p>
+            Ready to take control of your PDF files? Sign up for Editevolv today and discover the easiest way to convert, edit, and manage your documents.
+
+
+          </p>
         </div>
         </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6  mt-3 ">
 
 
-<!-- Add the carousel section here, right after the navigation bar -->
-
-
-  <!-- 3D Cards Container -->
-  <div class="carousel-container w-1/2 h-72 relative">
-      <div class="rectangular-card absolute t-120 w-72 h-24 bg-yellow-400 rounded-lg flex justify-content-center items-center shadow-lg overflow-hidden">
-          <div class="typing">Why Edit Evolve?</div>
-      </div>
-      <div class="carousel relative w-100 h-100 mt-32">
-          <div class="card" style="transform: rotateY(0deg) translateZ(100px);">
-              <div class="card-text font-bold">User Friendly Interface</div> <!-- Added font-bold class -->
-          </div>
-          <div class="card" style="transform: rotateY(-120deg) translateZ(100px);">
-              <div class="card-text font-bold">Affordable Pricing</div> <!-- Added font-bold class -->
-          </div>
-          <div class="card" style="transform: rotateY(-240deg) translateZ(100px); display: flex; justify-content: center; align-items: center;">
-              <div class="card-text text-center font-bold">Advanced Editing Features</div> <!-- Added font-bold class -->
-          </div>
-      </div>
-  </div>
-
-
-
-
-        file
+      <div class="carousel-container w-1/2 h-75">
+        <div class="rectangular-card py-4 bg-warning rounded-3 text-center shadow mx-5 mb-3">
+            <div class="typing-animation">Why Edit Evolve?</div>
+        </div>
+        <div class="carousel relative w-100 h-75 mt-5">
+            <div class="card1 bg-danger" style="transform: rotateY(0deg) translateZ(100px);">
+                <div class="card1-text  fw-bold">User Friendly Interface</div> <!-- Added font-bold class -->
+            </div>
+            <div class="card1 bg-info" style="transform: rotateY(-120deg) translateZ(100px);">
+                <div class="card-text  fw-bold">Affordable Pricing</div> <!-- Added font-bold class -->
+            </div>
+            <div class="card1 bg-primary " style="transform: rotateY(-240deg) translateZ(100px); display: flex; justify-content: center; align-items: center;">
+                <div class="card-text text-center fw-bold">Advanced Editing Features</div> <!-- Added font-bold class -->
+            </div>
+        </div>
     </div>
+    </div> 
+
+
+
+<br>
+
+
+
+
     <div class="col-md-3">
         <div class="row">
            <!-- Right Container -->
@@ -85,10 +90,6 @@
         </div>
     </div> 
 
-
-
-
-
 <br>
     
 <div class="container-fluid px-4 mt-5">
@@ -96,7 +97,7 @@
 {% comment %} section 1 {% endcomment %}
     <div class="row gx-6 g-4 mx-auto">
         <h1 class="mb-0 fw-bold ">Every tool you need to work with PDFs in one place</h1>
-        <p class="mb-0">All tools are 100% FREE and easy to use! Merge, split, compress, convert, rotate, unlock, and watermark PDFs with just a few clicks.</p>
+        <p class="mb-0 ">All tools are 100% FREE and easy to use! Merge, split, compress, convert, rotate, unlock, and watermark PDFs with just a few clicks.</p>
     
       <div class="col-md-3">
        <div class="p-4 border bg-light text-center border rounded-3">
@@ -369,6 +370,36 @@
 
 
 <style>
+  .carousel-container {
+    perspective: 1000px;
+    margin: 0 auto;
+    width: 300px;
+    height: 300px; /* Perspective for 3D effect */
+}
+.carousel {
+    transform-style: preserve-3d; /* Preserve 3D effect */
+    animation: rotate 10s infinite linear; /* Continuous rotation */
+}
+@keyframes rotate {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(-360deg); } /* Rotate in the opposite direction */
+}
+.card1 {
+    position: absolute;
+width: 208px; /* 52rem converted to px assuming 1rem = 4px */
+height: 208px; /* Same as above */
+background-color: transparent; /* Default to transparent to catch issues */
+border-radius: 0.5rem;
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+backface-visibility: hidden;
+}
+
+
+
   .man-illustration {
       position: relative;
       width: 150px; /* Width of the man */
@@ -525,19 +556,10 @@
   }
 </style>
 
- 
+ <script>
 
 
+ </script>
 
  <br>
-
-
- <!-- Vertically centered modal -->
-<div class="modal-dialog modal-dialog-centered">
-  
-</div>
-
-
-
-
 {% endblock %}

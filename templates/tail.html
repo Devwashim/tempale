@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>PDF Tools</title>
+    <style>
+        
+        body {
+            background-color: #c29011;
+            font-size: 18px; /* Increased base font size */
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, #ffd133, #10B981);
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        /* Dashboard styling */
+        .dashboard {
+            background-color: #efcb76;
+            padding: 20px;
+            border-right: 2px solid #ddd;
+        }
+
+        .dashboard ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .dashboard ul li {
+            margin-bottom: 10px;
+        }
+
+        .dashboard ul li a {
+            color: #000;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            background-color: #e2e2e2;
+            border-radius: 5px;
+        }
+
+        .dashboard ul li a:hover {
+            background-color: #e9bd72;
+        }
+
+        /* Styling for the help form */
+        .help-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .help-form input,
+        .help-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .help-form button {
+            background-color: #34D399;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .help-form button:hover {
+            background-color: #10B981;
+        }
+        /* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide-up animation */
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Scale-in animation */
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Button hover animation */
+.nav-link {
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    transform: translateY(-3px);
+    background-color: #256D85;
+}
+
+/* Animate header and content on load */
+h1, p, .tools-container, .right-section img, .help-form {
+    animation: fadeIn 1s ease-in;
+}
+
+.tools-container .bg-white, .right-section img {
+    animation: slideUp 0.7s ease-in;
+}
+
+.help-form {
+    animation: scaleIn 0.8s ease-in;
+}
+
+/* Add transition effects to buttons */
+button, .nav-link {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Button animations */
+button:hover, .nav-link:hover {
+    transform: scale(1.05);
+    background-color: #34D399;
+}
+
+/* Additional animations for images and grid items */
+img {
+    animation: scaleIn 1s ease-in;
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+ /* Background image styling */
+ body {
+            background-image: url('images/bg3.jpg'); /* Replace with your image URL */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+        }
+
+        /* Add this to your existing CSS */
+        .dropdown-menu {
+            opacity: 0; /* Start hidden */
+            transform: translateY(-20px) scale(0.8); /* Start slightly above and smaller */
+            transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+            visibility: hidden; /* Hide the element */
+            display: none; /* Hidden by default */
+        }
+
+        .dropdown-menu.show {
+            opacity: 1; /* Fully visible */
+            transform: translateY(0) scale(1); /* Move to original position and scale to full size */
+            visibility: visible; /* Make the element visible */
+            animation: bounceIn 0.3s;
+            display: none; /* Hidden by default */ /* Add bounce animation */
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: translateY(-20px) scale(0.8);
+            }
+            50% {
+                transform: translateY(10px) scale(1.05); /* Bounce effect */
+            }
+            100% {
+                transform: translateY(0) scale(1); /* Final position */
+            }
+        }
+        /* Base styles for the links */
+a {
+    color: #FFFFFF; /* White text color */
+    background-color: #566172; /* Dark gray background */ 
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Smooth transition */
+    padding: 10px; /* Add padding for better click area */
+    border-radius: 4px; /* Slightly rounded corners */
+}
+
+/* Hover effect for the links */
+a:hover {
+    background-color: #2B6CB0; /* Bright blue background */
+    color: #000000; /* Change text color to black on hover */
+    transform: scale(1.05); /* Scale up */
+}
+.modal {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .modal.hidden {
+            opacity: 0;
+            transform: scale(0.7);
+            pointer-events: none; /* Prevent interaction when hidden */
+        }
+
+        .modal.visible {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto; /* Allow interaction when visible */
+        }
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.9); /* White background with transparency */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            transform: translateY(-30px); /* Start slightly above */
+            transition: transform 0.3s ease; /* Smooth transition for the card */
+        }
+
+        .login-card.visible {
+            transform: translateY(0); /* Move to original position */
+        }
+
+        .login-header {
+            background-color: #4A5568; /* Dark gray */
+            color: white;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .login-header h2 {
+            margin: 0;
+        }
+
+        .login-footer {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .login-footer a {
+            color: #ffffff; /* White */
+            margin: 0 0.5rem; /* Add horizontal spacing */
+        }
+
+        .carousel-container {
+        perspective: 1000px;
+        margin: 0 auto;
+        width: 300px;
+        height: 300px; /* Perspective for 3D effect */
+    }
+    .carousel {
+        transform-style: preserve-3d; /* Preserve 3D effect */
+        animation: rotate 10s infinite linear; /* Continuous rotation */
+    }
+    @keyframes rotate {
+        0% { transform: rotateY(0deg); }
+        100% { transform: rotateY(-360deg); } /* Rotate in the opposite direction */
+    }
+    .card {
+        position: absolute;
+    width: 208px; /* 52rem converted to px assuming 1rem = 4px */
+    height: 208px; /* Same as above */
+    background-color: transparent; /* Default to transparent to catch issues */
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    backface-visibility: hidden;
+    }
+    .typing {
+        display: inline-block;
+        white-space: nowrap; /* Prevent text from wrapping */
+        overflow: hidden; /* Hide overflow */
+        border-right: 2px solid; /* Cursor effect */
+        animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite; /* Typing and blinking cursor */
+    }
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+    @keyframes blink-caret {
+        from, to { border-color: transparent; }
+        50% { border-color: black; }
+    }
+    
+/* Specific background colors for each card */
+.card:nth-child(1) {
+    background-color: #38b2ac; /* Tailwind teal-400 */
+}
+.card:nth-child(2) {
+    background-color: #f6ad55; /* Tailwind orange-400 */
+}
+.card:nth-child(3) {
+    background-color: #667eea; /* Tailwind indigo-400 */
+}
+
+/* Animation for text visibility */
+.card-text {
+    opacity: 0; /* Start invisible */
+    animation: fadeInText 3s forwards; /* Animation to fade in text */
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Ensure animations for card entry are correct */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+/* Base styles for the cards */
+.bg-white.shadow-md.rounded-lg {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+    cursor: pointer; /* Indicates that the card is interactive */
+}
+
+/* Hover effect for the cards */
+.bg-white.shadow-md.rounded-lg:hover {
+    transform: translateY(-10px); /* Moves the card up */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Increases shadow to give depth */
+}
+.bg-white.shadow-md.rounded-lg {
+    position: relative; /* Needed for absolute positioning of the icon */
+}
+.tools-container {
+        max-width: 100%; /* Make it responsive */
+    }
+
+    #pdf-upload {
+        width: 100%; /* Full width for better alignment */
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc; /* Border styling for better visual */
+    }
+
+    .tools-container button {
+        transition: background-color 0.3s ease; /* Smooth button hover effect */
+    }
+    .dropdown-menu {
+        display: none; /* Ensure dropdown is hidden by default */
+        position: absolute; /* Ensure it is positioned absolutely */
+        z-index: 1000; /* Set a high z-index to appear above other elements */
+    }
+    .dropdown-menu.show {
+        display: block; /* Show dropdown when 'show' class is added */
+    }
+    </style>
+</head>
+
+
+
+
+
+<body class="bg-gray-100">
+
+
+    <nav class="bg-gray-800">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <!-- Mobile menu button-->
+              <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+                <!--
+                  Icon when menu is closed.
+      
+                  Menu open: "hidden", Menu closed: "block"
+                -->
+                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <!--
+                  Icon when menu is open.
+      
+                  Menu open: "block", Menu closed: "hidden"
+                -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div class="flex flex-shrink-0 items-center">
+                <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+              </div>
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4">
+                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                  <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Dashboard</a>
+                  <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
+                  <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
+                  <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+                </div>
+              </div>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                <span class="absolute -inset-1.5"></span>
+                <span class="sr-only">View notifications</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+                </svg>
+              </button>
+      
+              <!-- Profile dropdown -->
+              <div class="relative ml-3">
+                <div>
+                  <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                    <span class="absolute -inset-1.5"></span>
+                    <span class="sr-only">Open user menu</span>
+                    <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                  </button>
+                </div>
+      
+                <!--
+                  Dropdown menu, show/hide based on menu state.
+      
+                  Entering: "transition ease-out duration-100"
+                    From: "transform opacity-0 scale-95"
+                    To: "transform opacity-100 scale-100"
+                  Leaving: "transition ease-in duration-75"
+                    From: "transform opacity-100 scale-100"
+                    To: "transform opacity-0 scale-95"
+                -->
+                <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                  <!-- Active: "bg-gray-100 outline-none", Not Active: "" -->
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="sm:hidden" id="mobile-menu">
+          <div class="space-y-1 px-2 pb-3 pt-2">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
+            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
+            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
+            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+          </div>
+        </div>
+      </nav>
+      
+
+
+    
+   <!-- Navigation -->
+<nav class="navbar p-4 bg-blue-600">
+    <div class="container mx-auto flex flex-col md:flex-row items-center">
+        <!-- Moved images to a new container -->
+        <div class="flex items-center mb-4 md:mb-0">
+            <img src="images/logo3.jpg" class="h-12 mr-2"> <!-- Adjust the height as needed -->
+        </div>
+
+        <button class="ml-auto text-white focus:outline-none md:hidden" id="navbar-toggle">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+
+        <div class="flex flex-grow justify-center space-x-4" id="navbar-links">
+            <a href="index.html" class="text-black nav-link bg-transparent hover:bg-gray-700 focus:outline-none py-2 px-4 rounded inline-block">Home</a>
+            <a href="#pricing" class="text-black nav-link bg-transparent hover:bg-gray-700 focus:outline-none py-2 px-4 rounded inline-block">Pricing</a>
+        
+            <!-- Added Sign Up link to the right of Login -->
+          
+            <!-- Convert PDF Dropdown Menu -->
+            <div class="relative inline-block text-left group">
+                <button type="button" class="text-black nav-link bg-transparent hover:bg-gray-700 focus:outline-none py-2 px-4 rounded inline-flex items-center" aria-expanded="true" aria-haspopup="true" onclick="toggleDropdown('convert-pdf-menu')">
+                    All Tools
+                    <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+
+                <!-- Dropdown Menu -->
+                <div id="convert-pdf-menu" class="dropdown-menu hidden origin-top-right absolute right-0 mt-2 w-80 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-all duration-300 ease-in-out transform scale-95" role="menu" aria-orientation="vertical" aria-labelledby="menu-button">
+                    <div class="py-1 flex" role="none">
+                        <div class="w-1/2 px-4">
+                            <h3 class="font-semibold py-2">ORGANIZE PDF</h3>
+                            <a href="merge.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">Merge PDF</a>
+                            <a href="split.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">Split PDF</a>
+                            <a href="remove-pages.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">Remove pages</a>
+                            <a href="extract-pages.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">Extract pages</a>
+                            <a href="organize-pdf.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">Organize PDF</a>
+                            <a href="scan-to-pdf.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">Scan to PDF</a>
+
+                            <h3 class="font-semibold py-2">OPTIMIZE PDF</h3>
+                            <a href="compress.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">Compress PDF</a>
+                            <a href="repair.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">Repair PDF</a>
+                            <a href="ocr.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">OCR PDF</a>
+
+                            <h3 class="font-semibold py-2">EDIT PDF</h3>
+                            <a href="rotate.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">Rotate PDF</a>
+                            <a href="add-page-numbers.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">Add page numbers</a>
+                            <a href="add-watermark.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">Add watermark</a>
+                            <a href="edit.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">Edit PDF</a>
+                        </div>
+                        <div class="w-1/2 px-4">
+                            <h3 class="font-semibold py-2">CONVERT TO PDF</h3>
+                            <a href="convert-to-jpg.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">JPG to PDF</a>
+                            <a href="convert-to-word.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">WORD to PDF</a>
+                            <a href="convert-to-ppt.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">POWERPOINT to PDF</a>
+                            <a href="convert-to-excel.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">EXCEL to PDF</a>
+                            <a href="convert-to-html.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">HTML to PDF</a>
+
+                            <h3 class="font-semibold py-2">CONVERT FROM PDF</h3>
+                            <a href="convert-to-jpg.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">PDF to JPG</a>
+                            <a href="convert-to-word.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">PDF to WORD</a>
+                            <a href="convert-to-ppt.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">PDF to POWERPOINT</a>
+                            <a href="convert-to-excel.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">PDF to EXCEL</a>
+                            <a href="convert-to-pdfa.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">PDF to PDF/A</a>
+
+                            <h3 class="font-semibold py-2">PDF SECURITY</h3>
+                            <a href="unlock.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">Unlock PDF</a>
+                            <a href="protect.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">Protect PDF</a>
+                            <a href="sign.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">Sign PDF</a>
+                            <a href="redact.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">Redact PDF</a>
+                            <a href="compare.html" class="block py-2 text-sm hover:bg-gray-100 transition duration-200" role="menuitem">Compare PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="text-black nav-link bg-transparent hover:bg-gray-700 focus:outline-none py-2 px-4 rounded inline-block" onclick="openModal()">Login</a>
+            <a href="#" class="text-black nav-link bg-transparent hover:bg-gray-700 focus:outline-none py-2 px-4 rounded inline-block" onclick="openSignupModal()">Sign Up</a>
+
+            
+        </div>
+    </div>
+</nav>
+
+<!-- Add the carousel section here, right after the navigation bar -->
+<div class="flex justify-between items-start my-10">
+    <!-- Left Container -->
+    <div class="left-container w-1/5 p-4"> <!-- Decreased width to 1/5 -->
+        <h2 class="text-2xl font-bold mb-4">Your Ultimate PDF File Converter Solution:</h2> <!-- Increased font size -->
+        <p class="bg-white p-4 rounded shadow text-lg tracking-wide"> <!-- Increased font size and added tracking -->
+            In today's fast-paced digital world, efficiency, accuracy, and convenience are key. At Editevolv, we provide an all-in-one solution to your PDF needs, ensuring that you can seamlessly manage, convert, and edit PDF files with ease. Whether you're a business professional, student, or someone who frequently deals with documents, Editevolv is designed to simplify your workflow and enhance productivity.
+            <br><br>
+            Ready to take control of your PDF files? Sign up for Editevolv today and discover the easiest way to convert, edit, and manage your documents.
+        </p>
+    </div>
+
+    <!-- 3D Cards Container -->
+    <div class="carousel-container w-1/2 h-72 relative">
+        <div class="rectangular-card absolute top-[-120px] w-72 h-24 bg-yellow-400 rounded-lg flex justify-center items-center shadow-lg overflow-hidden">
+            <div class="typing">Why Edit Evolve?</div>
+        </div>
+        <div class="carousel relative w-full h-full mt-32">
+            <div class="card" style="transform: rotateY(0deg) translateZ(100px);">
+                <div class="card-text font-bold">User Friendly Interface</div> <!-- Added font-bold class -->
+            </div>
+            <div class="card" style="transform: rotateY(-120deg) translateZ(100px);">
+                <div class="card-text font-bold">Affordable Pricing</div> <!-- Added font-bold class -->
+            </div>
+            <div class="card" style="transform: rotateY(-240deg) translateZ(100px); display: flex; justify-content: center; align-items: center;">
+                <div class="card-text text-center font-bold">Advanced Editing Features</div> <!-- Added font-bold class -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Container -->
+    <div class="right-container w-1/4 p-4">
+        <h2 class="text-xl font-bold mb-4">Advertisements</h2>
+        
+        <!-- Ad 1 -->
+        <div class="ad mb-4 p-2 border border-gray-300 rounded shadow">
+            <img src="path/to/ad1.jpg" alt="Ad 1" class="w-full h-auto rounded">
+            <p class="text-center mt-2">Your ad description here.</p>
+        </div>
+
+        <!-- Ad 2 -->
+        <div class="ad mb-4 p-2 border border-gray-300 rounded shadow">
+            <img src="path/to/ad2.jpg" alt="Ad 2" class="w-full h-auto rounded">
+            <p class="text-center mt-2">Your ad description here.</p>
+        </div>
+
+        <!-- Ad 3 -->
+        <div class="ad mb-4 p-2 border border-gray-300 rounded shadow">
+            <img src="path/to/ad3.jpg" alt="Ad 3" class="w-full h-auto rounded">
+            <p class="text-center mt-2">Your ad description here.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Rest of your page content -->
+    <div class="container mx-auto my-10">
+        <!-- Cards Container -->
+     
+
+        <!-- Upload Section -->
+        <div class="w-full p-6 flex justify-center">
+            <div class="bg-white border-2 border-dashed border-gray-300 rounded-lg p-8 text-center w-full max-w-lg"> <!-- Increased padding and max width -->
+                <h2 class="text-3xl font-bold mb-6">Upload Your PDF Files</h2> <!-- Increased font size -->
+                <p class="mb-6 text-lg">Drag and drop your files here or</p> <!-- Increased font size -->
+                <input type="file" id="file-upload" accept=".pdf" class="hidden" onchange="handleFileUpload(event)">
+                <label for="file-upload" class="cursor-pointer bg-red-500 text-white py-3 px-6 rounded hover:bg-red-600 text-lg">Choose File</label> <!-- Increased padding and font size -->
+                <p class="mt-4 text-gray-500 text-lg">Edit First, Pay Later</p> <!-- Increased font size -->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mx-auto my-10 flex flex-col md:flex-row">
+        <!-- File Upload Section -->
+      
+        <!-- Right: Tools and Image -->
+        <div class="tools-container w-full md:flex-grow p-6">
+            <h1 class="text-3xl font-bold mb-5">Every tool you need to work with PDFs in one place</h1>
+            <p class="mb-5">All tools are 100% FREE and easy to use! Merge, split, compress, convert, rotate, unlock, and watermark PDFs with just a few clicks.</p>
+    
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-20">
+                <!-- Card 1 -->
+                <!-- Example of a card with hover animation -->
+<div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+    <img src="images/merge pdf.jpg" alt="Merge PDF" class="icon mb-4" style="width: 50px; height: auto;">
+    <h5 class="font-bold text-center">Merge PDF</h5>
+    <p class="text-center">Combine PDFs in the order you want with the easiest PDF merger available.</p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Toggle Dropdown</button>
+    <div class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+        <p>Dropdown content for Merge PDF.</p>
+    </div>
+</div>
+                <!-- Card 2 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/split.jpg" alt="Split PDF" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">Split PDF</h5>
+                    <p class="text-center">Separate one page or a whole set for easy conversion into independent PDF files.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown2')">Toggle Dropdown</button>
+                    <div id="dropdown2" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for Split PDF.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/compress.png" alt="Compress PDF" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">Compress PDF</h5>
+                    <p class="text-center">Reduce file size while optimizing for maximal PDF quality.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown3')">Toggle Dropdown</button>
+                    <div id="dropdown3" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for Compress PDF.</p>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/word to pdf.jpg" alt="Word to PDF" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">Word to PDF</h5>
+                    <p class="text-center">Make DOC and DOCX files easy to read by converting them to PDF.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown4')">Toggle Dropdown</button>
+                    <div id="dropdown4" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for Word to PDF.</p>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/powerpoint to pdf.png" alt="PowerPoint to PDF" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">PowerPoint to PDF</h5>
+                    <p class="text-center">Make PPT and PPTX slideshows easy to view by converting them to PDF.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown5')">Toggle Dropdown</button>
+                    <div id="dropdown5" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for PowerPoint to PDF.</p>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/excel to pdf.png" alt="Excel to PDF" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">Excel to PDF</h5>
+                    <p class="text-center">Make EXCEL spreadsheets easy to read by converting them to PDF.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown6')">Toggle Dropdown</button>
+                    <div id="dropdown6" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for Excel to PDF.</p>
+                    </div>
+                </div>
+                <!-- Card 7 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/pdf to word.png" alt="PDF to Word" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">PDF to Word</h5>
+                    <p class="text-center">Easily convert your PDF files into easy to edit DOC and DOCX documents.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown7')">Toggle Dropdown</button>
+                    <div id="dropdown7" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for PDF to Word.</p>
+                    </div>
+                </div>
+                <!-- Card 8 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/pdf to powerpoint.jpg" alt="PDF to PowerPoint" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">PDF to PowerPoint</h5>
+                    <p class="text-center">Turn your PDF files into easy to edit PPT and PPTX slideshows.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown8')">Toggle Dropdown</button>
+                    <div id="dropdown8" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for PDF to PowerPoint.</p>
+                    </div>
+                </div>
+                <!-- Card 9 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/pdf to excel.png" alt="PDF to Excel" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">PDF to Excel</h5>
+                    <p class="text-center">Pull data straight from PDFs into Excel spreadsheets in a few short seconds.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown9')">Toggle Dropdown</button>
+                    <div id="dropdown9" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for PDF to Excel.</p>
+                    </div>
+                </div>
+                <!-- Card 10 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/edit pdf.jpg" alt="Edit PDF" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">Edit PDF</h5>
+                    <p class="text-center">Add text, images, shapes or freehand annotations to a PDF document.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown10')">Toggle Dropdown</button>
+                    <div id="dropdown10" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for Edit PDF.</p>
+                    </div>
+                </div>
+                <!-- Card 11 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/pdf to jpg.png" alt="PDF to JPG" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">PDF to JPG</h5>
+                    <p class="text-center">Convert each PDF page into a JPG or extract all images contained in a PDF.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown11')">Toggle Dropdown</button>
+                    <div id="dropdown11" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for PDF to JPG.</p>
+                    </div>
+                </div>
+                <!-- Card 12 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/jpg to pdf.png" alt="JPG to PDF" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">JPG to PDF</h5>
+                    <p class="text-center">Convert JPG images to PDF in seconds. Easily adjust orientation and margins.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown12')">Toggle Dropdown</button>
+                    <div id="dropdown12" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for JPG to PDF.</p>
+                    </div>
+                </div>
+                <!-- Card 13 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/sign pdf.jpg" alt="Sign PDF" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">Sign PDF</h5>
+                    <p class="text-center">Sign yourself or request electronic signatures from others.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown13')">Toggle Dropdown</button>
+                    <div id="dropdown13" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for Sign PDF.</p>
+                    </div>
+                </div>
+                <!-- Card 14 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/add watermark.jpg" alt="Watermark" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">Watermark</h5>
+                    <p class="text-center">Stamp an image or text over your PDF in seconds. Choose the typography, transparency, and position.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown14')">Toggle Dropdown</button>
+                    <div id="dropdown14" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for Watermark.</p>
+                    </div>
+                </div>
+                <!-- Card 15 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/rotate pdf.jpg" alt="Rotate PDF" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">Rotate PDF</h5>
+                    <p class="text-center">Rotate your PDFs the way you need them. You can even rotate multiple PDFs at once!</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown15')">Toggle Dropdown</button>
+                    <div id="dropdown15" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for Rotate PDF.</p>
+                    </div>
+                </div>
+                <!-- Card 16 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/organize pdf.png" alt="Organize PDF" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">Organize PDF</h5>
+                    <p class="text-center">Sort pages of your PDF file however you want.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown16')">Toggle Dropdown</button>
+                    <div id="dropdown16" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for Organize PDF.</p>
+                    </div>
+                </div>
+                <!-- Card 17 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/pdf to pdfa.png" alt="PDF to PDF/A" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">PDF to PDF/A</h5>
+                    <p class="text-center">Transform your PDF into PDF/A, the ISO-standardized version of PDF specially designed for the digital preservation of electronic documents.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown17')">Toggle Dropdown</button>
+                    <div id="dropdown17" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for PDF to PDF/A.</p>
+                    </div>
+                </div>
+                <!-- Card 18 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/repair.jpg" alt="Repair PDF" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">Repair PDF</h5>
+                    <p class="text-center">Fix a damaged PDF and recover your content.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown18')">Toggle Dropdown</button>
+                    <div id="dropdown18" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for Repair PDF.</p>
+                    </div>
+                </div>
+                <!-- Card 19 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/add page number.png" alt="Page Numbers" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">Page Numbers</h5>
+                    <p class="text-center">Add page numbers into PDFs with ease.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown19')">Toggle Dropdown</button>
+                    <div id="dropdown19" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for Page Numbers.</p>
+                    </div>
+                </div>
+                <!-- Card 20 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/scan.jpg" alt="Scan to PDF" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">Scan to PDF</h5>
+                    <p class="text-center">Easily convert scanned PDFs into editable documents.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown20')">Toggle Dropdown</button>
+                    <div id="dropdown20" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for Scan to PDF.</p>
+                    </div>
+                </div>
+                <!-- Card 21 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/ocr.png" alt="OCR PDF" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">OCR PDF</h5>
+                    <p class="text-center">Extract text from scanned documents and images.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown21')">Toggle Dropdown</button>
+                    <div id="dropdown21" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for OCR PDF.</p>
+                    </div>
+                </div>
+                <!-- Card 22 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/unlock.png" alt="Unlock PDF" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">Unlock PDF</h5>
+                    <p class="text-center">Remove PDF password security, giving you the freedom to use your PDFs as you want.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown22')">Toggle Dropdown</button>
+                    <div id="dropdown22" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for Unlock PDF.</p>
+                    </div>
+                </div>
+                <!-- Card 23 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/protect pdf.png" alt="Protect PDF" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">Protect PDF</h5>
+                    <p class="text-center">Protect PDF files with a password. Encrypt PDF documents to prevent unauthorized access.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown23')">Toggle Dropdown</button>
+                    <div id="dropdown23" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for Protect PDF.</p>
+                    </div>
+                </div>
+                <!-- Card 24 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/html to pdf.jpg" alt="HTML to PDF" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">HTML to PDF</h5>
+                    <p class="text-center">Convert webpages in HTML to PDF. Copy and paste the URL of the page you want and convert it to PDF with a click.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown24')">Toggle Dropdown</button>
+                    <div id="dropdown24" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for HTML to PDF.</p>
+                    </div>
+                </div>
+                <!-- Card 25 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center">
+                    <img src="images/repair.jpg" alt="Repair PDF" class="icon mb-4" style="width: 50px; height: auto;">
+                    <h5 class="font-bold text-center">Repair PDF</h5>
+                    <p class="text-center">Fix a damaged PDF and recover your content.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown25')">Toggle Dropdown</button>
+                    <div id="dropdown25" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for Repair PDF.</p>
+                    </div>
+                </div>
+                <!-- Card 26 -->
+                <div class="bg-white shadow-md rounded-lg py-10 px-4 flex flex-col items-center relative">
+                    <button class="text-yellow-500 hover:text-yellow-600 focus:outline-none mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-16 h-16" viewBox="0 0 24 24"> <!-- Increased size of the icon -->
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </button>
+                    <h5 class="font-bold text-center">FAQ</h5>
+                    <p class="text-center">Frequently asked questions about PDF tools and services.</p>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" onclick="toggleDropdown('dropdown26')">Toggle Dropdown</button>
+                    <div id="dropdown26" class="hidden mt-2 bg-gray-100 p-4 rounded shadow-md">
+                        <p>Dropdown content for FAQ.</p>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+    
+ 
+
+
+
+
+<!-- Pricing Section -->
+<section id="pricing" class="py-20">
+    
+    <div class="container mx-auto text-center">
+        <h1 class="text-4xl font-bold mb-8">Pricing Plans</h1>
+        <p class="text-lg mb-12">Choose the plan that's right for you!</p>
+
+
+
+            
+
+        </div>
+        <div class="flex justify-center space-x-8">
+            <!-- Basic Plan -->
+            <div class="bg-white shadow-lg rounded-lg pricing-card p-8 max-w-md transition-transform duration-300 ease-in-out transform hover:scale-105 h-80"> <!-- Increased height -->
+                <h2 class="text-3xl font-bold mb-4">Basic Plan</h2>
+                <p class="text-xl mb-6">$10/month</p>
+                <ul class="mb-6 text-left">
+                    <li class="mb-2">✔ Access to basic features</li>
+                    <li class="mb-2">✔ Community support</li>
+                </ul>
+                <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-200">Choose Plan</button>
+            </div>
+
+            <!-- Pro Plan -->
+            <div class="bg-white shadow-lg rounded-lg pricing-card p-8 max-w-md transition-transform duration-300 ease-in-out transform hover:scale-105 h-80"> <!-- Increased height -->
+                <h2 class="text-3xl font-bold mb-4">Pro Plan</h2>
+                <p class="text-xl mb-6">$25/month</p>
+                <ul class="mb-6 text-left">
+                    <li class="mb-2">✔ Access to all features</li>
+                    <li class="mb-2">✔ Priority support</li>
+                    <li class="mb-2">✔ Exclusive resources</li>
+                </ul>
+                <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-200">Choose Plan</button>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="bg-white shadow-lg rounded-lg pricing-card p-8 max-w-md transition-transform duration-300 ease-in-out transform hover:scale-105 h-80"> <!-- Increased height -->
+                <h2 class="text-3xl font-bold mb-4">Premium Plan</h2>
+                <p class="text-xl mb-6">$50/month</p>
+                <ul class="mb-6 text-left">
+                    <li class="mb-2">✔ All Pro features</li>
+                    <li class="mb-2">✔ Personalized support</li>
+                    <li class="mb-2">✔ Advanced analytics</li>
+                </ul>
+                <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-200">Choose Plan</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 flex items-center ">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Help Illustration -->
+        <div class="hidden md:block w-1/2">
+            <div class="man-illustration">
+                <div class="head"></div>
+                <div class="body"></div>
+                <div class="arms"></div>
+                <div class="legs"></div>
+                <div class="speech-bubble">
+                    <p class="typing-animation">Come, I'll help you!</p> <!-- Added typing animation class -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Help Form -->
+        <div class="w-full md:w-1/2 max-w-lg mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Need Help?</h2>
+            <p class="mb-8">Fill out the form below and our support team will get back to you shortly.</p>
+            <form class="bg-white shadow-md rounded-lg p-6 space-y-4"> <!-- Added background, shadow, and padding -->
+                <input type="text" placeholder="Your Name" class="border border-gray-300 p-3 mb-4 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <input type="email" placeholder="Your Email" class="border border-gray-300 p-3 mb-4 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <textarea placeholder="Your Message" class="border border-gray-300 p-3 mb-4 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-500" rows="4" required></textarea>
+                <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-200 transform hover:scale-105">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<style>
+    .man-illustration {
+        position: relative;
+        width: 150px; /* Width of the man */
+        height: 300px; /* Height of the man */
+        margin: 0 auto;
+        animation: fadeIn 1s ease-in; /* Fade-in effect for the whole illustration */
+    }
+
+    .head {
+        width: 75px; /* Width of the head */
+        height: 75px; /* Height of the head */
+        background-color: #000; /* Black color for the head */
+        border-radius: 50%; /* Circular head */
+        position: absolute;
+        top: 0;
+        left: 37.5px; /* Center the head */
+        animation: bounce 1s infinite; /* Bounce animation for the head */
+    }
+
+    .body {
+        width: 60px; /* Increased width of the body */
+        height: 100px; /* Increased height of the body */
+        background-color: #000; /* Black color for the body */
+        position: absolute;
+        top: 75px; /* Adjusted position */
+        left: 45px; /* Center the body */
+    }
+
+    .arms {
+        width: 150px; /* Width of the arms */
+        height: 30px; /* Height of the arms */
+        background-color: #000; /* Black color for the arms */
+        position: absolute;
+        top: 75px; /* Adjusted position */
+        left: 0; /* Center the arms */
+        border-radius: 15px; /* Rounded arms */
+        animation: sway 1s infinite alternate; /* Sway animation for the arms */
+    }
+
+    .legs {
+        width: 60px; /* Increased width of the legs */
+        height: 100px; /* Height of the legs */
+        background-color: #000; /* Black color for the legs */
+        position: absolute;
+        top: 175px; /* Adjusted position */
+        left: 45px; /* Center the first leg */
+    }
+
+    .legs::after {
+        content: '';
+        width: 40px; /* Width of the second leg */
+        height: 100px; /* Height of the second leg */
+        background-color: #000; /* Black color for the second leg */
+        position: absolute;
+        top: 0;
+        left: 10px; /* Position for the second leg, creating space between legs */
+    }
+
+    .speech-bubble {
+        position: absolute;
+        top: 50px; /* Position above the head */
+        left: -160px; /* Position to the left of the head */
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+        width: 150px; /* Width of the speech bubble */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        opacity: 0; /* Start hidden */
+        animation: popUp 2s infinite; /* Pop-up effect */
+        animation-delay: 2s; /* Delay before it appears */
+    }
+
+    .speech-bubble p {
+        margin: 0;
+        font-size: 14px; /* Font size for the speech text */
+        color: #333; /* Text color */
+    }
+
+    /* Keyframe animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-10px);
+        }
+        60% {
+            transform: translateY(-5px);
+        }
+    }
+
+    @keyframes sway {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(10deg);
+        }
+    }
+
+    @keyframes popUp {
+        0% {
+            opacity: 0;
+            transform: translateY(10px); /* Start slightly lower */
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0); /* End at original position */
+        }
+    }
+
+    /* Add this typing animation */
+    .typing-animation {
+        display: inline-block;
+        overflow: hidden; /* Ensures the text doesn't wrap */
+        white-space: nowrap; /* Prevents text from wrapping */
+        border-right: 2px solid; /* Cursor effect */
+        animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite; /* Typing and blinking cursor */
+    }
+
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+        from, to { border-color: transparent; }
+        50% { border-color: black; }
+    }
+
+    /* Additional styles for the form */
+    form {
+        background-color: #f9f9f9; /* Light background for the form */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    }
+
+    input, textarea {
+        transition: border-color 0.3s ease; /* Smooth transition for focus */
+    }
+
+    input:focus, textarea:focus {
+        border-color: #3b82f6; /* Change border color on focus */
+    }
+</style>
+
+<footer style="background-color: #593308;" class="text-white py-8 mt-4"> <!-- Reduced padding and margin -->
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:space-x-8 px-4"> <!-- Adjusted spacing -->
+        <div class="text-center md:text-left md:order-1">
+            <h2 class="text-3xl font-bold mb-2">PDF Tools</h2> <!-- Reduced margin below heading -->
+            <p class="mb-1">All tools you need to work with PDFs in one place.</p> <!-- Reduced margin below each paragraph -->
+            <p class="mb-1">Email: editevolve@gmail.com</p>
+            <p class="mb-1">Address: Pune Maharashtra</p>
+            <p class="mb-0">Contact: 020 23568600</p>
+        </div>
+        <div class="flex flex-col md:order-2 items-center md:items-end space-y-4 md:space-y-0"> <!-- Adjusted spacing -->
+            <h5 class="text-black-500 mb-2">Get the best stories straight into your inbox!</h5> <!-- Reduced margin below heading -->
+            <div class="input-group flex w-full max-w-sm">
+                <input type="email" class="form-control p-2 text-black w-full" placeholder="Email" aria-label="Email"> <!-- Reduced padding -->
+                <button class="bg-yellow-500 text-black px-4 py-2 ml-2">SUBSCRIBE</button> <!-- Reduced button padding -->
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Login Modal -->
+<div id="loginModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden modal "onclick="closeModalIfClickedOutside(event)">
+    <div class="login-card w-64 md:w-1/4"> <!-- Decreased width to w-64 -->
+        <div class="login-header">
+            <h2 class="text-2xl font-bold">Login to PDF Tools</h2>
+            
+        </div>
+        <div class="p-6">
+            <form id="loginForm">
+                <input type="text" name="username" placeholder="Username" required class="border border-gray-300 p-2 w-full mb-4 rounded">
+                <input type="password" name="password" placeholder="Password" required class="border border-gray-300 p-2 w-full mb-4 rounded">
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 w-full">Login</button>
+            </form>
+            <div class="login-footer mt-4">
+                <a href="#" class="hover:underline">Forgot Password?</a>
+                <span>|</span>
+                <a href="#" onclick="openSignupModal()" class="hover:underline">Sign Up</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Signup Modal -->
+<div id="signupModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden modal">
+    <div class="login-card w-64 md:w-1/4"> <!-- Decreased width to w-64 -->
+        <div class="login-header">
+            <h2 class="text-2xl font-bold">Sign Up for PDF Tools</h2>
+        </div>
+        <div class="p-6">
+            <form id="signupForm">
+                <input type="text" name="username" placeholder="Username" required class="border border-gray-300 p-2 w-full mb-4 rounded">
+                <input type="email" name="email" placeholder="Email" required class="border border-gray-300 p-2 w-full mb-4 rounded">
+                <input type="password" name="password" placeholder="Password" required class="border border-gray-300 p-2 w-full mb-4 rounded">
+                <input type="password" name="confirm_password" placeholder="Confirm Password" required class="border border-gray-300 p-2 w-full mb-4 rounded">
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 w-full">Sign Up</button>
+            </form>
+            <div class="login-footer mt-4 text-center">
+                <p class="text-sm">Already have an account? <a href="#" class="text-blue-500 hover:underline" onclick="openLoginModal()">Login</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openSignupModal() {
+        const modal = document.getElementById('signupModal');
+        const card = modal.querySelector('.login-card');
+        modal.classList.remove('hidden');
+        modal.classList.add('visible');
+        card.classList.add('visible'); // Add visible class to the card for animation
+    }
+
+    function closeSignupModal() {
+        const modal = document.getElementById('signupModal');
+        const card = modal.querySelector('.login-card');
+        card.classList.remove('visible'); // Remove visible class for animation
+        modal.classList.remove('visible');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300); // Match the duration of the transition
+    }
+  
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+        const modal = document.getElementById('signupModal');
+        if (event.target === modal) {
+            closeSignupModal();
+        }
+    };
+
+    // Optional: Handle form submission
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        // Add your signup logic here (e.g., AJAX request)
+        alert('Signup submitted!'); // Placeholder for demonstration
+        closeSignupModal(); // Close the modal after submission
+    });
+    let currentIndex = 0; // Track the current card index
+    const cards = document.querySelectorAll('.card');
+    const totalCards = cards.length;
+
+    function updateCarousel() {
+        const carousel = document.querySelector('.carousel');
+        const angle = -currentIndex * 120; // Calculate rotation angle
+        carousel.style.transform = `rotateY(${angle}deg)`; // Apply rotation
+    }
+
+    function rotateCarousel() {
+        currentIndex = (currentIndex + 1) % totalCards; // Move to the next card
+        updateCarousel(); // Update carousel position
+    }
+
+    // Rotate the carousel every 3 seconds
+    setInterval(rotateCarousel, 3000);
+</script>
+<script>
+    // Optional: You can control the typing speed and duration here
+    const typingText = document.querySelector('.typing');
+    typingText.style.animationDuration = '4s'; 
+    // Adjust typing duration
+</script>
+<script>
+    // Removed duplicate declarations for currentIndex, cards, and totalCards
+    // Assuming these variables are already declared and accessible within this script block
+
+    function updateCarousel() {
+        const carousel = document.querySelector('.carousel');
+        const angle = -currentIndex * 120;
+        carousel.style.transform = `rotateY(${angle}deg)`;
+    }
+
+    function rotateCarousel() {
+        currentIndex = (currentIndex + 1) % totalCards;
+        updateCarousel();
+    }
+
+    setInterval(rotateCarousel, 3000);
+</script>
+
+<!-- Consolidated toggleDropdown function -->
+<script>
+    function toggleDropdown(dropdownId) {
+        const dropdown = document.getElementById(dropdownId);
+        dropdown.classList.toggle('hidden');
+        dropdown.classList.toggle('show');
+    }
+
+    // Close dropdown if clicked outside
+    window.addEventListener('click', function(event) {
+        const dropdown = document.getElementById('convert-pdf-menu');
+        if (!dropdown.contains(event.target) && !event.target.matches('[onclick*="toggleDropdown"]')) {
+            dropdown.classList.add('hidden');
+            dropdown.classList.remove('show');
+        }
+    });
+    function openModal() {
+        const modal = document.getElementById('loginModal');
+        const card = modal.querySelector('.login-card');
+        modal.classList.remove('hidden');
+        modal.classList.add('visible');
+        card.classList.add('visible'); // Add visible class to the card for animation
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('loginModal');
+        const card = modal.querySelector('.login-card');
+        card.classList.remove('visible'); // Remove visible class for animation
+        modal.classList.remove('visible');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300); // Match the duration of the transition
+    }
+     // Close modal when clicking outside of it
+     
+     function closeModalIfClickedOutside(event) {
+    if (event.target === document.getElementById('loginModal')) {
+        document.getElementById('loginModal').classList.add('hidden');
+    }
+}
+
+
+
+    // Optional: Handle form submission
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        // Add your login logic here (e.g., AJAX request)
+        alert('Login submitted!'); // Placeholder for demonstration
+        closeModal(); // Close the modal after submission
+    });
+    function navigateTo(url) {
+        // Display a popup message before navigation
+        alert("You are being redirected to: " + url);
+        // Navigate to the specified URL after the user clicks "OK"
+        window.location.href = url;
+    }
+
+    // Toggle dropdown visibility
+    function toggleDropdown(dropdownId) {
+        const dropdown = document.getElementById(dropdownId);
+        dropdown.classList.toggle('hidden');
+        dropdown.classList.toggle('show');
+    }
+
+    // Close dropdown if clicked outside
+    window.addEventListener('click', function(event) {
+        const dropdown = document.getElementById('convert-pdf-menu');
+        const button = document.querySelector('[onclick*="toggleDropdown"]');
+        if (!dropdown.contains(event.target) && !button.contains(event.target)) {
+            dropdown.classList.add('hidden');
+            dropdown.classList.remove('show');
+        }
+    });
+    function toggleDropdown(dropdownId) {
+            const dropdown = document.getElementById(dropdownId);
+            dropdown.classList.toggle('hidden');
+            dropdown.classList.toggle('show');
+        }
+
+        window.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('convert-pdf-menu');
+            const button = document.querySelector('[onclick*="toggleDropdown"]');
+            if (!dropdown.contains(event.target) && !button.contains(event.target)) {
+                dropdown.classList.add('hidden');
+                dropdown.classList.remove('show');
+            }
+        });
+</script>
+</body>
+</html>
+
