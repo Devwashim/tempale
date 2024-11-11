@@ -30,6 +30,9 @@ def newhome(request):
 def client(request):
     return render(request, 'client.html')
 
+def client1(request):
+    return render(request, 'client1.html')
+
 def tail(request):
     return render(request, 'tail.html')
 
