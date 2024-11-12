@@ -149,7 +149,19 @@
     display: none; /* Hide the input */
 }
 
-    
+  .zoom {
+    transition: transform .4s; /* Animation */
+  }
+  
+  .zoom:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+  .lee:hover {
+  background-image: linear-gradient(to right, #2ebf91 0%, #8360c3 100%);
+  }
+
+
+ 
 </style>
 
 
@@ -176,6 +188,214 @@
     </div>
 </div>
 </div>
+
+
+
+
+<div class="container">
+    <h1 class="text-center font-bold mb-8">Pricing Plans</h1>
+    <p class=" text-center text-lg mb-12">Choose the plan that's right for you!</p>
+ <div class="row row-cols-1 row-cols-md-3 mb-3 text-center justify-content-center mx-auto ">
+
+    <div class="col ">
+      <div class="card mb-4 rounded-3 shadow-sm zoom">
+        <div class="card-header py-3">
+          <h2 class="my-0 fw-bold">Basic Plan</h2>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">$10/<small class="text-body-secondary fw-light">/month</small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>✔ Access to basic features</li>
+            <li>✔ Community support</li>
+            <br>
+          </ul>
+          </ul>
+          <button type="button" class="w-50 btn btn-lg btn-outline-primary mb-3">Choose Plan</button>
+        </div>
+      </div>
+    </div>
+    <div class="col ">
+      <div class="card mb-4 rounded-3 shadow-sm zoom">
+        <div class="card-header py-3">
+          <h2 class="my-0 fw-bold">Pro Plan </h2>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">$25/<small class="text-body-secondary fw-light">/month</small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>✔ Access to all features</li>
+            <li>✔ Priority support</li>
+            <li>✔ Exclusive resources</li>
+          </ul>
+          <button type="button" class="w-50 btn btn-lg btn-outline-primary mb-3">Choose Plan</button>
+        </div>
+      </div>
+    </div>
+    <div class="col ">
+      <div class="card mb-4 rounded-3 shadow-sm zoom">
+        <div class="card-header py-3">
+          <h2 class="my-0 fw-bold">Premium Plan</h2>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">$50/<small class="text-body-secondary fw-light">/month</small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>✔ All Pro features</li>
+            <li>✔ Personalized support</li>
+            <li>✔ Advanced analytics</li>
+          </ul>
+          <button type="button" class="w-50 btn btn-lg btn-outline-primary mb-3">Choose Plan</button>
+        </div>
+      </div>
+    </div>
+
+   
+  </div>
+  </div>
+ <br>
+
+ <style>
+
+  
+.testimonial-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  height: 400px;
+  width: 100%;
+  margin: 50px auto;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.testimonial-card {
+  width: 350px;
+  padding: 30px;
+  margin: 0 30px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background: white;
+  transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease;
+  position: absolute;
+  opacity: 0.5;
+  filter: blur(4px);
+}
+
+.testimonial-card.center {
+  opacity: 1;
+  filter: none;
+  transform: translateX(0) scale(1.2);
+}
+
+.testimonial-card.left {
+  transform: translateX(-100%) scale(0.8);
+}
+
+.testimonial-card.right {
+  transform: translateX(100%) scale(0.8);
+}
+
+.testimonial-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid black;
+}
+
+.testimonial-content {
+  margin-top: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.testimonial-quote {
+  font-size: 16px;
+  color: #333;
+  font-weight: 900;
+}
+
+.testimonial-author {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+  font-weight: 700;
+}
+ </style> 
+
+ {% comment %} testimonial start {% endcomment %}
+ 
+ <div class="testimonial-container">
+  <div class="testimonial-card left">
+      <img src="/static/images/pdf to jpg.png" alt="Person Name" class="testimonial-image">
+      <div class="testimonial-content">
+          <p class="testimonial-quote">"Previous testimonial quote here."</p>
+          <p class="testimonial-author">Person Name - Job Title</p>
+      </div>
+  </div>
+  <div class="testimonial-card center">
+      <img src="path_to_center_image" alt="Michael B." class="testimonial-image">
+      <div class="testimonial-content">
+          <p class="testimonial-quote">"EditEvolv is a powerful tool to edit my PDF files for teaching easily online without any downloads or ads."</p>
+          <p class="testimonial-author">Michael B. - High School Teacher</p>
+      </div>
+  </div>
+  <div class="testimonial-card right">
+      <img src="path_to_right_image" alt="Person Name" class="testimonial-image">
+      <div class="testimonial-content">
+          <p class="testimonial-quote">"Next testimonial quote here."</p>
+          <p class="testimonial-author">Person Name - Job Title</p>
+      </div>
+  </div>
+</div>
+
+
+ {% comment %} testimonial end {% endcomment %}
+
+ 
+{% comment %} section 1 {% endcomment %}
+<div class="row gx-6 g-4 mx-auto">
+  <h1 class="mb-0 fw-bold ">Every tool you need to work with PDFs in one place</h1>
+  <p class="mb-0 ">All tools are 100% FREE and easy to use! Merge, split, compress, convert, rotate, unlock, and watermark PDFs with just a few clicks.</p>
+
+<div class="col-md-3 zoom">
+ <div class=" lee p-4 border text-center border rounded-3 shadow">
+  <img src="{% static "merge pdf.jpg" %}" alt="Compress PDF" class="icon mb-4" style="width: 50px; height: auto;">
+  <h5 class="font-bold text-center">Merge PDF</h5>
+  <p class="text-center">Combine PDFs in the order you want with the easiest.</p>
+
+
+       </div>
+       </div>
+
+<div class="col-md-3 zoom">
+ <div class="lee p-4 border bg-light text-center border rounded-3 shadow price">
+  <img src="{% static "split.jpg" %}" alt="Compress PDF" class="icon mb-4" style="width: 50px; height: auto;">
+  <h5 class="font-bold text-center">Split PDF</h5>
+  <p class="text-center">Separate one page or a whole set for easy conversion.</p>
+
+       </div>
+       </div>
+
+<div class="col-md-3 zoom">
+ <div class=" lee p-4 border bg-light text-center border rounded-3 shadow">
+  <img src="{% static "compress.png" %}" alt="Compress PDF" class="icon mb-4" style="width: 50px; height: auto;">
+  <h5 class="font-bold text-center">Compress PDF</h5>
+  <p class="text-center">Reduce file size while optimizing for maximal PDF quality.</p>
+
+       </div>
+       </div>
+
+<div class="col-md-3 zoom">
+ <div class=" lee p-4 border bg-light text-center border rounded-3 shadow">
+  <img src="{% static "word to pdf.jpg" %}" alt="Compress PDF" class="icon mb-4" style="width: 50px; height: auto;">
+  <h5 class="font-bold text-center">Word to PDF</h5>
+  <p class="text-center">Make DOC and DOCX files easy to read by converting.</p>
+       </div>
+       </div>
+
+</div>
+
+
 
 
 

@@ -62,10 +62,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <li><a href="#" class="nav-link px-2" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Login</a></li>
-          <li><a href="#" class="nav-link px-2" data-bs-toggle="modal" data-bs-target="#exampleModal1">Sign Up</a></li>
           <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-scroll="true"  data-bs-backdrop="false" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Login</button>
-
           </li>
       </ul>
       <form class="d-flex">
@@ -74,8 +71,6 @@
     </div>
   </div>
 </nav>
-
-
 <style>
 .navbar .megamenu{ padding: 1rem; }
 /* ============ desktop view ============ */
@@ -84,7 +79,6 @@
 .navbar .has-megamenu{position:static!important;}
 .navbar .megamenu{left:25%; right:10%; width:45%; margin-top:0; 
  }
-
 }	
 /* ============ desktop view .end// ============ */
 
@@ -98,7 +92,6 @@
   }
 }
 /* ============ mobile view .end// ============ */
- 
   @media only screen and (min-width: 992px) {
     .dropdown:hover .dropdown-menu {
       display: flex;
@@ -149,9 +142,9 @@
 
 {% comment %} login {% endcomment %}
 {% comment %} <div class="offcanvas offcanvas-end border rounded-3 mt-5" data-bs-scroll="true"  data-bs-backdrop="false" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="height:50vh"> {% endcomment %}
-<div class="offcanvas offcanvas-end border rounded-3 mt-5 p-0" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="height:50vh" >
+<div class="offcanvas offcanvas-end border rounded-3 my-auto mt-5 p-0  h-50" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" >
   <div class="offcanvas-header ">
-    <h5 class="offcanvas-title " id="offcanvasRightLabel">Login</h5>
+    <h5 class="offcanvas-title fw-bold" id="offcanvasRightLabel">Login</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body border border-bottom-3">
@@ -165,10 +158,7 @@
         <label for="exampleInputPassword1" class="form-label">Password</label>
         <input type="password" class="form-control" id="exampleInputPassword1">
       </div>
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
+    
       <button type="submit" class="btn btn-primary">Submit</button>
       <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-scroll="true"  data-bs-backdrop="false" data-bs-target="#offcanvasRight1" aria-controls="offcanvasRight">signup</button>
     </form> 
@@ -178,9 +168,9 @@
 
 {% comment %} sign up {% endcomment %}
 {% comment %} <div class="offcanvas offcanvas-end border rounded-3 mt-5" data-bs-scroll="true"  data-bs-backdrop="false" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="height:50vh"> {% endcomment %}
-<div class="offcanvas offcanvas-end border rounded-3 mt-5"    tabindex="-1" id="offcanvasRight1" aria-labelledby="offcanvasRightLabel" style="height:50vh">
+<div class="offcanvas offcanvas-end border rounded-3 my-auto mt-5  h-50"    tabindex="-1" id="offcanvasRight1" aria-labelledby="offcanvasRightLabel" >
   <div class="offcanvas-header ">
-    <h5 class="offcanvas-title" id="offcanvasRightLabel">Sign up</h5>
+    <h5 class="offcanvas-title fw-bold" id="offcanvasRightLabel">Signup</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body border border-bottom-3">
@@ -194,109 +184,15 @@
         <label for="exampleInputPassword1" class="form-label">Password</label>
         <input type="password" class="form-control" id="exampleInputPassword1">
       </div>
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
+    
       <button type="submit" class="btn btn-primary">Submit</button>
-
       <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-scroll="true"  data-bs-backdrop="false" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Login</button>
-
     </form> 
    </div>
 </div>
 {% comment %} login end  {% endcomment %}
-
-<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered  ">
-    <div class="modal-content">
-      <div class="modal-header  bg-secondary justify-content-center text-light" style="">
-        <h4 class="modal-title fw-bold" id="exampleModalLabel">Login to PDF Tools</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-            <input type="text" name="username" placeholder="Username" required class="border border-gray-300 p-2 w-100 mb-4 rounded">
-            <input type="password" name="password" placeholder="Password" required class="border border-gray-300 p-2 w-100 mb-4 rounded">
-            <button type="submit" class="btn btn-primary btn-lg px-4 py-2 rounded hover:bg-blue-700 transition duration-300 w-100">Login</button>
-        </form>
-      </div>
-      <div class="modal-footer justify-content-center">
-        <a href="" class="btn btn-secondary btn-lg text-light">Forgot Password?</a>
-        <span>|</span>
-        <a  class="btn btn-secondary btn-lg text-light" onclick="exampleModal()" >Sign Up</a>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade " id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header  bg-secondary justify-content-center text-light" style="">
-        <h4 class="modal-title fw-bold" id="exampleModalLabel1">Sign Up for PDF Tools</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <input type="text" name="username" placeholder="Username" required class="border border-gray-300 p-2 w-100 mb-4 rounded">
-          <input type="email" name="email" placeholder="Email" required class="border border-gray-300 p-2 w-100 mb-4 rounded">
-          <input type="password" name="password" placeholder="Password" required class="border border-gray-300 p-2 w-100 mb-4 rounded">
-          <input type="password" name="confirm_password" placeholder="Confirm Password" required class="border border-gray-300 p-2 w-100 mb-4 rounded">
-          <button type="submit" class="btn btn-primary text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 w-100" >Sign Up</button>        </form>
-      </div>
-      <div class="modal-footer justify-content-center">
-        <p class="text-sm">Already have an account? <a  class="btn btn-secondary"id="closemodal" data-bs-toggle="modal"  aria-label="Close" data-bs-target="#exampleModal" >Login</a></p>
-
-
-
-      </div>
-    </div> 
-  </div>
-</div>
-
       {% block content %}{% endblock content %}
-
-      {% comment %} footer start {% endcomment %}
-{% comment %}       
-      <div class="container-fluid" style="background-color:#593308;">
-        <footer class="py-5 text-light">
-          <div class="row mx-auto">
-            <div class="col-12 col-md-7 mb-3 ">
-          <h2 class="text-3xl font-bold mb-2">PDF Tools</h2> <!-- Reduced margin below heading -->
-            <p class="mb-1">All tools you need to work with PDFs in one place.</p> <!-- Reduced margin below each paragraph -->
-            <p class="mb-1">Email: editevolve@gmail.com</p>
-            <p class="mb-1">Address: Pune Maharashtra</p>
-            <p class="mb-0">Contact: 020 23568600</p>
-            </div>
-
-            <div class="col-md-4 offset-md-1 mb-3">
-              <form>
-                <h5 class="text-black-500 mb-2">Get the best stories straight into your inbox!</h5> <!-- Reduced margin below heading -->
-                <div class="input-group flex w-full max-w-sm">
-                    <input type="email" class="form-control p-2 text-black w-full" placeholder="Email" aria-label="Email"> <!-- Reduced padding -->
-                    <button class="btn text-black px-4 py-2 ml-2" style="background-color:rgb(245 158 11);">SUBSCRIBE</button> <!-- Reduced button padding -->
-                </div>
-              </form>
-            </div>
-          </div>
-      
-          <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-            <p>© 2024 Company, Inc. All rights reserved.</p>
-            <ul class="list-unstyled d-flex">
-              <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-meta"></i><use xlink:href="#"></use></a></li>
-              <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-instagram"></i><use xlink:href="#instagram"></use></a></li>
-              <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-twitter-x" width="24" height="24"></i><use xlink:href="#facebook"></use></a></li>
-              <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-linkedin"></i><use xlink:href="#facebook"></use></a></li>
-            </ul>
-        </footer>
-      </div> {% endcomment %}
-
-      {% comment %} footer end {% endcomment %}
-
     <!-- Optional JavaScript; choose one of the two! -->
-
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
@@ -304,5 +200,35 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(() => {
+          document.querySelector('.testimonial').style.opacity = 1;
+          document.querySelector('.testimonial').style.transform = 'translateX(0)';
+      }, 1000); // Adjust timing as needed
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.testimonial-card');
+      let positions = ['left', 'center', 'right']; // Initial positions
+
+      function rotateTestimonials() {
+          // Rotate positions array
+          positions.unshift(positions.pop());
+
+          // Apply new positions to cards
+          cards.forEach((card, index) => {
+              card.classList.remove('left', 'center', 'right');
+              card.classList.add(positions[index]);
+          });
+      }
+
+      setInterval(rotateTestimonials, 3000); // Rotate every 3 seconds
+  });
+</script>
+<script>
   </body>
 </html>-
