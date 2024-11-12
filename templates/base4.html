@@ -14,9 +14,9 @@
   </head>
   {% load static %}
 <body>
-<nav class="navbar navbar-expand-lg navbar-light  fw-bold fs-5  border rounded-3" style="background-image: linear-gradient(to right, #2ebf91 0%, #8360c3 100%);">
+<nav class="navbar navbar-expand-lg navbar-light  fw-bold fs-5  border" style="background-image: linear-gradient(to right, #2ebf91 0%, #8360c3 100%);">
   <div class="container-fluid">
-    <a class="navbar-brand"  href=""> <img src="{% static 'edit.png' %}" alt="Logo" class="logo rounded-3"   height="60px"><span class="text-dark mx-2">EditEvolv</span>
+    <a class="navbar-brand"  href=""> <img src="{% static 'edit.png' %}" alt="Logo" class="logo rounded-circle"   height="60px"><span class="text-dark mx-2">EditEvolv</span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,11 +61,10 @@
           </div>
         </li>
         <li class="nav-item">
-          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-scroll="true"  data-bs-backdrop="false" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Login</button>
+          <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-scroll="true"  data-bs-backdrop="false" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Login</button>
           </li>
       </ul>
       <form class="d-flex">
-    {% comment %} <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-scroll="true"  data-bs-backdrop="false" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Login</button> {% endcomment %}
       </form>
     </div>
   </div>
@@ -140,56 +139,66 @@
 </style>
 
 {% comment %} login {% endcomment %}
-{% comment %} <div class="offcanvas offcanvas-end border rounded-3 mt-5" data-bs-scroll="true"  data-bs-backdrop="false" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="height:50vh"> {% endcomment %}
-<div class="offcanvas offcanvas-end border rounded-3 my-auto mt-5 p-0  h-50" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" >
+<div class="offcanvas offcanvas-end border rounded-3 my-auto mt-5 p-0 w-auto" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="height:45vh" >
   <div class="offcanvas-header ">
     <h5 class="offcanvas-title fw-bold" id="offcanvasRightLabel">Login</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body border border-bottom-3">
     <form>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
-      </div>
+        <input type="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email address">
+        <div id="emailHelp" class="form-text mb-3">We'll never share your email with anyone else.</div>
+        <input type="password" class="form-control mb-3" id="exampleInputPassword1" placeholder="Password">
     
-      <button type="submit" class="btn btn-primary">Submit</button>
-      <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-scroll="true"  data-bs-backdrop="false" data-bs-target="#offcanvasRight1" aria-controls="offcanvasRight">signup</button>
+      <button type="submit" class="btn btn-primary w-100 mb-2">Submit</button>
+    <p class="text-center">Don't have an account?<a class="btn btn-link" type="button" data-bs-toggle="offcanvas" data-bs-scroll="true"  data-bs-backdrop="false" data-bs-target="#offcanvasRight1" aria-controls="offcanvasRight">signup</a></p>
     </form> 
    </div>
 </div>
-{% comment %} login end  {% endcomment %}
 
 {% comment %} sign up {% endcomment %}
-{% comment %} <div class="offcanvas offcanvas-end border rounded-3 mt-5" data-bs-scroll="true"  data-bs-backdrop="false" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="height:50vh"> {% endcomment %}
-<div class="offcanvas offcanvas-end border rounded-3 my-auto mt-5  h-50"    tabindex="-1" id="offcanvasRight1" aria-labelledby="offcanvasRightLabel" >
+<div class="offcanvas offcanvas-end border rounded-3 my-auto mt-5 w-auto"    tabindex="-1" id="offcanvasRight1" aria-labelledby="offcanvasRightLabel" style="height:60vh">
   <div class="offcanvas-header ">
     <h5 class="offcanvas-title fw-bold" id="offcanvasRightLabel">Signup</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body border border-bottom-3">
     <form>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
-      </div>
-    
-      <button type="submit" class="btn btn-primary">Submit</button>
-      <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-scroll="true"  data-bs-backdrop="false" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Login</button>
-    </form> 
+      <input type="text" class="form-control mb-3" id="exampleInputtext1" aria-describedby="text" placeholder=" Full Name">
+      <input type="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email address">
+      <div id="emailHelp" class="form-text mb-3">We'll never share your email with anyone else.</div>
+      <input type="password" class="form-control mb-3" id="exampleInputPassword1" placeholder="Password">
+      <input type="password" class="form-control mb-3" id="exampleInputPassword1" placeholder="confirm password">
+  
+    <button type="submit" class="btn btn-primary w-100 mb-2">Submit</button>
+  <p class="text-center">Don't have an account?<a class="btn btn-link" type="button" data-bs-toggle="offcanvas" data-bs-scroll="true"  data-bs-backdrop="false" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">signup</a></p>
+  </form> 
+
+
    </div>
 </div>
-{% comment %} login end  {% endcomment %}
+{% comment %} support end  {% endcomment %}
+
+<div class="offcanvas offcanvas-end border rounded-3  my-auto mt-5  h-50"    tabindex="-1" id="offcanvasRight3" aria-labelledby="offcanvasRightLabel" >
+  <div class="offcanvas-header ">
+    <h5 class="offcanvas-title fw-bold" id="offcanvasRightLabel">Support</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body border border-bottom-3 ">
+    <form class="row " style="background-color:rgb(250, 250, 250);">
+
+      <input type="text" class="form-control mb-3" id="exampleInputEmail1" placeholder="Name">
+  
+      <input type="email" class="form-control mb-2" placeholder="Your Email" class="border border-gray-300 p-2  mb-2 w-100 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required id="exampleFormControlInput1" placeholder=" Email id">
+  
+      <textarea class="form-control mb-2"  id="exampleFormControlTextarea1" rows="4" placeholder="Issue:"></textarea>
+      <button type="submit" class="btn btn-primary w-100">Submit</button>
+  </form>
+   </div>
+</div>
+
+
+
 {% block content %}{% endblock content %}
 
   <br>
@@ -197,7 +206,7 @@
  <div class="container-fluid" style="background-image: linear-gradient(to right, #bdc3c7 0%, #484f55 100%);">
   <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 border-top fs-5 mx-auto text-light">
     <div class="col mb-4">
-      <img src="/static/images/logo3.jpg" alt="EditEvolv" class="navbar-logo">
+      <img src="{% static "edit.png" %}" alt="EditEvolv" class="navbar-logo rounded-circle"  height="60px">
       <p>Files Converted Since 2024</p>
       <h3 id="file-count">0</h3>
 </div>
@@ -241,16 +250,21 @@
     </div>
     
   </footer>
-  <div class="d-flex flex-column flex-sm-row justify-content-between py-4  border-top text-white">
-    <p>© 2024 Company, Inc. All rights reserved.</p>
-    <ul class="list-unstyled d-flex">
-      <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-meta"></i><use xlink:href="#"></use></a></li>
-      <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-instagram"></i><use xlink:href="#instagram"></use></a></li>
-      <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-twitter-x" width="24" height="24"></i><use xlink:href="#facebook"></use></a></li>
-      <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-linkedin"></i><use xlink:href="#facebook"></use></a></li>
-</ul>
+
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
+    <p class="col-md-4 mb-0 text-light">© 2024 EditEvolv All rights reserved.</p>
+
+    <div class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+    <ul class="list-unstyled d-flex ">
+      <li class="nav-item mb-2 mx-2"><a href="#" class="nav-link p-0 text-light">How-Tos</a></li>
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Pricing</a></li>
+    </ul>    
   </div>
-</div>
+
+    <div class="nav col-md-4 justify-content-end">
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-scroll="true"  data-bs-backdrop="false" data-bs-target="#offcanvasRight3" aria-controls="offcanvasRight">Support</button>
+    </div>
+  </footer>
 {% comment %} footer end {% endcomment %}
 
 
